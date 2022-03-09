@@ -2,6 +2,8 @@ let toolsOpen = false;
 
 let toolsIconVisible = true;
 
+import NavBar from "../components/Nav.vue"
+
 function toggleTools() {
     if (!toolsOpen) {
         $("#tools-menu").show();
