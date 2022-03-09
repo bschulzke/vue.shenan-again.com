@@ -1,14 +1,5 @@
 <template>
 <div id="app">
-  <nav class="navbar footer fixed-bottom navbar-dark bg-dark">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="footer-text grey-link" href="https://github.com/bschulzke/shenan-again-creative-project"  target="_blank">GitHub</a>
-      </li>
-    </ul>
-    <a class="grey-link footer-text" href="pages/contact.html">Contact Us</a>
-    <a class="footer-text fullscreen">&copy; 2022 Ben Schulzke</a>
-  </nav>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/index.html"><img height=50px; src="/images/clock.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,6 +27,15 @@
     </div>
   </nav>
 <router-view/>
+  <nav class="navbar footer fixed-bottom navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="footer-text grey-link" href="https://github.com/bschulzke/vue.shenan-again.com"  target="_blank">GitHub</a>
+      </li>
+    </ul>
+    <a class="grey-link footer-text" href="pages/contact.html">Contact Us</a>
+    <a class="footer-text fullscreen">&copy; 2022 Ben Schulzke</a>
+  </nav>
 </div>
 </template>
 
