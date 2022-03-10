@@ -5,7 +5,7 @@
         <p class="mid-tagline info-header">Control the Chaos</p>
         <p class="last-tagline info-header">Perfect Your Heist</p>
         <div class="button-wrapper">
-          <a class="large-button" href="/pages/about.html">Learn More</a>
+          <router-link class="large-button" to="/about">Learn More</router-link>
         </div>
     </div>
 </div>    

@@ -18,7 +18,7 @@
           <router-link to="/about"><div :class="['nav-link', {active : about}]">About</div></router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pages/tools.html">Tools</a>
+          <router-link to="/tools"><div :class="['nav-link', {active : tools}]">Tools</div></router-link>
         </li>
         <li class="nav-item">
           <router-link to="/contribute"><div :class="['nav-link', {active : contribute}]">Contribute</div></router-link>
