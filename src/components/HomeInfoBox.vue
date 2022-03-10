@@ -14,17 +14,21 @@
 <script>
 export default {
   name: 'InfoBox',
-  props: {
-    msg: String
-  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .main-view {
     height: 100%;
     display: flex;
     justify-content: center;
   }
+
+    @media only screen and (min-width: 901px) {
+      .info {
+          padding: 2rem 5rem;
+          margin-top: 2rem;
+      }
+    }
+
 </style>
