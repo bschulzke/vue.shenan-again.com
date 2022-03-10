@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <a class="navbar-brand" href="/index.html"><img height=50px; src="/images/clock.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -26,6 +26,7 @@
       </ul>
     </div>
   </nav>
+  <img class="background-image" src="/images/background.png"/>
 <router-view/>
   <nav class="navbar footer fixed-bottom navbar-dark bg-dark">
     <ul class="navbar-nav mr-auto">
@@ -45,6 +46,8 @@
   }
 </script>
 
-<style>
-
+<style scoped>
+  #app {
+    height: 100%;
+  }
 </style>
