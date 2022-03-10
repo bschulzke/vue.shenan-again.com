@@ -26,7 +26,7 @@ export default {
 
     @media only screen and (min-width: 901px) {
       .info {
-          padding: 2rem 5rem;
+          padding: 3rem 5rem;
           margin-top: 2rem;
       }
     }

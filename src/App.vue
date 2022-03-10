@@ -1,7 +1,7 @@
 <template>
 <div id="app">
      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-    <a class="navbar-brand" href="/index.html"><img height=50px; src="/images/clock.png"></a>
+    <router-link to="/" class="navbar-brand"><img height=50px; src="/images/clock.png"></router-link>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,19 +9,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link to="/"><div class="nav-link">Home</div></router-link>
+          <router-link to="/"><div :class="['nav-link', {active : home}]">Home</div></router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/rulebook"><div class="nav-link">Rulebook</div></router-link>
+          <router-link to="/rulebook"><div :class="['nav-link', {active : rulebook}]">Rulebook</div></router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pages/about.html">About</a>
+          <router-link to="/about"><div :class="['nav-link', {active : about}]">About</div></router-link>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/pages/tools.html">Tools</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pages/contribute.html">Contribute</a>
+          <router-link to="/contribute"><div :class="['nav-link', {active : contribute}]">Contribute</div></router-link>
         </li>
       </ul>
     </div>
@@ -41,8 +41,28 @@
 </template>
 
 <script>
-  export default {
 
+  export default {
+    computed: {
+    currentRouteName() {
+        return this.$route.name;
+    },
+    home() {
+      return this.currentRouteName == 'home';
+    },
+    rulebook() {
+      return this.currentRouteName == 'rulebook';
+    },
+    about() {
+      return this.currentRouteName == 'about';
+    },
+    tools() {
+      return this.currentRouteName == 'tools';
+    },
+    contribute() {
+      return this.currentRouteName == 'contribute';
+    }
+}
   }
 </script>
 
@@ -50,4 +70,9 @@
   #app {
     height: 100%;
   }
+      @media only screen and (min-width: 901px) {
+        .nav-link {
+          width: 7rem;
+        }
+    }
 </style>

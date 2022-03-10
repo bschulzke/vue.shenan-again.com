@@ -3,9 +3,9 @@
     <div class="info">
       <p class="info-header">{{header}}</p>
       <p v-for="paragraph in paragraphs" :key="paragraph.text">{{paragraph.text}}</p>
-        <div class="button-wrapper">
-          <a class="large-button fullscreen" href="/resources/rulebook.pdf" target="_blank">{{buttonText ? buttonText : 'Button' }}</a>
-          <a class="large-button mobile-only" href="/resources/rulebook.pdf" target="_blank">{{mobileButton ? mobileButton : buttonText? buttonText : 'Button' }}</a>
+        <div class="button-wrapper" v-if="buttonText">
+        <a v-if="!targetBlank" class="large-button" :href="buttonLink">{{buttonText ? buttonText : 'Button' }}</a>
+          <a v-if="targetBlank" class="large-button" :href="buttonLink"  target="_blank">{{buttonText ? buttonText : 'Button' }}</a>
         </div>       
     </div>
   </div>    
@@ -17,9 +17,9 @@ export default {
   props: {
     header: String,
     buttonText: String,
-    mobileButton: String,
     buttonLink: String,
     paragraphs: Object,
+    targetBlank: Boolean,
   }
 }
 </script>
@@ -33,7 +33,7 @@ export default {
   }
     @media only screen and (min-width: 901px) {
       .info {
-          padding: 2rem 5rem;
+          padding: 3rem 5rem;
           margin-top: 2rem;
       }
     }
