@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'InfoBox',
   props: {
     msg: String
   }
