@@ -1,6 +1,19 @@
 <template>
   <div class="tools">
-    <InfoBox :header="header" :paragraphs="paragraphs" :rawHtml="rawHtml"/>
+      <div class="grid-view">
+            <img class="fullscreen" src="/images/chart-key.png"/>
+            <InfoBox :header="header" :paragraphs="paragraphs" :rawHtml="rawHtml"/>
+      </div>
+        <div class="grid-view">
+          <img class="grid-image" src="/images/table-6.png"/>
+          <img class="grid-image" src="/images/table-5-6.png"/>
+          <img class="grid-image" src="/images/table-4-5-6.png"/>
+        </div>
+      <div class="grid-view">
+        <img class="grid-image" src="/images/chart-6.png"/>
+        <img class="grid-image" src="/images/chart-5-6.png"/>
+        <img class="grid-image" src="/images/chart-4-5-6.png"/>
+      </div> 
   </div>
 </template>
 
@@ -34,10 +47,8 @@ export default {
     display: flex;
     justify-content: center;
     padding: 4rem 0;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(229,229,229, 0.65)
+    background-color: rgba(229,229,229, 0.65);
+    flex-direction: column;
   }
 
 </style>
