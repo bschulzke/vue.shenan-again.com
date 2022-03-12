@@ -1,31 +1,46 @@
 <template>
   <div class="tools">
-      <div class="grid-view">
-            <img class="fullscreen" src="/images/chart-key.png"/>
-            <InfoBox :header="header" :paragraphs="paragraphs" :rawHtml="rawHtml"/>
-      </div>
         <div class="grid-view">
-          <img class="grid-image" src="/images/table-6.png"/>
-          <img class="grid-image" src="/images/table-5-6.png"/>
-          <img class="grid-image" src="/images/table-4-5-6.png"/>
+            <div class="info">
+            <div class="info-header">
+              Probability Calculator
+            </div>
+            <p>Calculate how likely you are to roll at least one 
+                <select v-model="targets" class="form-select number-dropdown" aria-label="Default select example">
+                  <option class="number-dropdown" value="six" selected>6</option>
+                  <option class="number-dropdown" value="fiveOrSix">5 or 6</option>
+                  <option class="number-dropdown" value="fourFiveOrSix" >4, 5 or 6</option>
+                </select>
+               on any number of dice.</p>
+            <div class="prob-calculator">
+              <div class="prob-selector">
+                <div class="form-outline">
+                  <input min=0 value=1 v-model="numDice" oninput="this.value = Math.abs(this.value)" type="number" id="dice-selector" class="form-control"/>
+                </div>
+                <div class="incrementer">
+                  <div>
+                    <div id="add-dice" class="plus" @click="addDice">&plus;</div>
+                    <div class="plus" @click="subtractDice">&minus;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="prob-card" class="grid-view card">
+            <div id="prob-results" class="card-text">
+              {{ percentChance }}% chance of rolling at least one {{targetPhrase}} on {{numDice}} dice
+            </div>
+          </div>
         </div>
-      <div class="grid-view">
-        <img class="grid-image" src="/images/chart-6.png"/>
-        <img class="grid-image" src="/images/chart-5-6.png"/>
-        <img class="grid-image" src="/images/chart-4-5-6.png"/>
-      </div> 
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import InfoBox from '@/components/InfoBox.vue'
 
 export default {
   name: 'RuleView',
-  components: {
-    InfoBox
-  },
+
   data() {
     return {
         header: "Probability Charts",
@@ -49,6 +64,7 @@ export default {
     padding: 4rem 0;
     background-color: rgba(229,229,229, 0.65);
     flex-direction: column;
+    height: 100%;
   }
 
 </style>
