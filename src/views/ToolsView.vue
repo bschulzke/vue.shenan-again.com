@@ -19,8 +19,8 @@
                 </div>
                 <div class="incrementer">
                   <div>
-                    <div id="add-dice" class="plus" v-on:click="numDice++">&plus;</div>
-                    <div class="plus" v-on:click="numDice--">&minus;</div>
+                    <div id="add-dice" class="plus" v-on:click="addDice">&plus;</div>
+                    <div class="plus" v-on:click="subtractDice">&minus;</div>
                   </div>
                 </div>
               </div>
@@ -83,6 +83,16 @@ export default {
             return "";
         }
     },
+    methods: {
+      addDice() {
+        this.numDice++;
+      },
+      subtractDice() {
+        if (this.numDice > 0) {
+          this.numDice--;
+        }
+      }      
+    }
   }
 </script>
 
