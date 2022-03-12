@@ -19,11 +19,14 @@ export default {
 <style scoped>
 
   .home {
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6rem 0;
+    padding: 4rem 0;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: absolute;
   }
 
   

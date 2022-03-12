@@ -101,10 +101,13 @@ export default {
   .tools {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 4rem 0;
     background-color: rgba(229,229,229, 0.65);
     flex-direction: column;
     height: 100%;
+    width: 100%;
+    position: absolute;
   }
 
 </style>

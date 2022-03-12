@@ -34,7 +34,7 @@
         <a class="footer-text grey-link" href="https://github.com/bschulzke/vue.shenan-again.com"  target="_blank">GitHub</a>
       </li>
     </ul>
-    <a class="grey-link footer-text" href="pages/contact.html">Contact Us</a>
+    <router-link to="/contact"><div class="footer-text grey-link">Contact Us</div></router-link>
     <a class="footer-text fullscreen">&copy; 2022 Ben Schulzke</a>
   </nav>
 </div>

@@ -36,10 +36,19 @@ export default {
 <style scoped>
 
   .contribute {
-    height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 4rem 0;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+  }
+
+     @media only screen and (min-width: 901px) {
+    .contribute {
+      height: 100%;
+    }
   }
 
 </style>
