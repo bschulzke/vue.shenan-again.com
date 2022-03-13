@@ -99,6 +99,7 @@ export default {
     height: 100%;
     display: flex;
     justify-content: center;
+    position: absolute;
   }
     @media only screen and (min-width: 901px) {
       .info {
