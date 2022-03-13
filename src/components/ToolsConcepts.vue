@@ -47,6 +47,7 @@ export default {
 <style scoped>
   .main-view {
     height: 100%;
+    margin-top: 1rem;
   }
     @media only screen and (min-width: 901px) {
       .info {
