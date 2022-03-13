@@ -1,7 +1,8 @@
 <template>
-  <div class="tools" v-bind:style="{ height: showCalculator ? '100%' : 'auto' }">
+  <div class="tools" v-bind:style="{ height: showCharts ? 'auto' : '100%' }">
     <ToolsCalc  v-if="showCalculator"></ToolsCalc>
     <ToolsCharts v-if="showCharts"></ToolsCharts>
+    <ToolsConcepts v-if="showConcepts"></ToolsConcepts>
   </div>
 </template>
 
@@ -9,17 +10,19 @@
 // @ is an alias to /src
 import ToolsCalc from '@/components/ToolsCalc.vue'
 import ToolsCharts from '@/components/ToolsCharts.vue'
+import ToolsConcepts from '@/components/ToolsConcepts.vue'
 
 export default {
   name: 'ToolsView',
     data() {
       return {
-        activeTool: 'calculator',
+        activeTool: 'concepts',
       }
     },
     components: {
       ToolsCalc,
       ToolsCharts,
+      ToolsConcepts,
     },
     computed: {
       showCalculator() {
@@ -27,9 +30,12 @@ export default {
       },
       showCharts() {
         return this.activeTool === 'charts';
+      },      
+      showConcepts() {
+        return this.activeTool === 'concepts';
       }
+    }
 }
-  }
 </script>
 
 <style scoped>
