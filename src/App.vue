@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link to="/"><div :class="['nav-link', {active : home}]">Home</div></router-link>
+          <router-link to="/"><div :class="['nav-link', {active : home}]" href="">Home</div></router-link>
         </li>
         <li class="nav-item">
           <router-link to="/rulebook"><div :class="['nav-link', {active : rulebook}]">Rulebook</div></router-link>
@@ -62,8 +62,8 @@
     contribute() {
       return this.currentRouteName == 'contribute';
     }
+},
 }
-  }
 </script>
 
 <style scoped>
