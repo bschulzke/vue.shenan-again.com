@@ -100,11 +100,16 @@ export default {
     display: flex;
     justify-content: center;
     position: absolute;
+    padding-top: 2rem;
   }
+
     @media only screen and (min-width: 901px) {
       .info {
           padding: 3rem 5rem;
           margin-top: 2rem;
+      }
+      .main-view {
+          padding: 0;
       }
     }
   @media only screen and (max-width: 900px) {

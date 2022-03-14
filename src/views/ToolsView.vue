@@ -1,5 +1,10 @@
 <template>
   <div class="tools" v-bind:style="{ height: showCharts ? 'auto' : '100%' }">
+    <div class="tools-nav">
+      <a @click="openCharts" :class="[{active : showCharts}]">Charts</a>
+      <a @click="openCalculator" :class="[{active : showCalculator}]">Calculator</a>
+      <a @click="openConcepts" :class="[{active : showConcepts}]">Roles</a>
+    </div>
     <ToolsCalc  v-if="showCalculator"></ToolsCalc>
     <ToolsCharts v-if="showCharts"></ToolsCharts>
     <ToolsConcepts v-if="showConcepts"></ToolsConcepts>
@@ -34,6 +39,17 @@ export default {
       showConcepts() {
         return this.activeTool === 'concepts';
       }
+    },
+    methods: {
+      openCharts() {
+        this.activeTool = 'charts';
+      },
+      openCalculator() {
+        this.activeTool = 'calculator';
+      },
+      openConcepts() {
+        this.activeTool = 'concepts';
+      }
     }
 }
 </script>
@@ -50,6 +66,29 @@ export default {
     /* height: 100%; */
     width: 100%;
     position: absolute;
+  }
+
+  .tools-nav {
+    position: absolute;
+    top: 3.75rem;
+    background-color: rgba(85, 83, 83, 0.9);
+    width: 100%;
+    justify-content: space-around;
+    z-index: 2;
+    height: 2rem;
+  }
+
+  a {
+    padding: 0 1.5rem;
+  }
+
+  a:hover {
+    border: solid white 2px;
+    border-radius: 5px;
+  }
+
+  .tools-nav:hover {
+    cursor: pointer;
   }
 
 </style>
