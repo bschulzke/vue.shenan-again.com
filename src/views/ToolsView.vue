@@ -5,9 +5,9 @@
       <a @click="openCalculator" :class="[{active : showCalculator}]">Calculator</a>
       <a @click="openConcepts" :class="[{active : showConcepts}]">Roles</a>
     </div>
-    <ToolsCalc  v-if="showCalculator"></ToolsCalc>
-    <ToolsCharts v-if="showCharts"></ToolsCharts>
-    <ToolsConcepts v-if="showConcepts"></ToolsConcepts>
+    <ToolsCalc  v-show="showCalculator"></ToolsCalc>
+    <ToolsCharts v-show="showCharts"></ToolsCharts>
+    <ToolsConcepts v-show="showConcepts"></ToolsConcepts>
   </div>
 </template>
 
