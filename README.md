@@ -1,5 +1,7 @@
 # vue.shenen-again.com
 
+A website built with the Vue CLI toolchain, meant to supplment the tabletop roleplaying game Shenan-Again.
+
 ## Project setup
 ```
 npm install
