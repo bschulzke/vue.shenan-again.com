@@ -37,6 +37,7 @@ export default {
           adjective: 'temporary',
           noun: 'test',
           selectedRole: 'random',
+          role: 'con',
           nouns: this.$root.$data.nouns,
           adjectives: this.$root.$data.adjectives,
           roles: ['burglar', 'con', 'muscle', 'hacker'],
@@ -54,17 +55,20 @@ export default {
         } 
         return article;
     },
-    role() {
-      if (this.selectedRole === 'random') {
-        return this.randomRole();
-      } else {
-        return this.selectedRole;
-      }
-    }
   },
   created() {
     this.noun = this.randomNoun();
     this.adjective = this.randomAdjective();
+    this.role = this.randomRole();
+  },
+    watch: {
+    selectedRole(newRole) {
+      if (newRole === 'random') {
+        this.role = this.randomRole();
+      } else {
+        this.role = this.selectedRole;
+      }
+    }
   },
   methods: {
 
@@ -75,7 +79,9 @@ export default {
 
     getRole() {
       if (this.selectedRole === 'random') {
-        this.selectedRole = this.randomRole();
+        this.role = this.randomRole();
+      } else {
+        this.role = this.selectedRole;
       }
       this.adjective = this.randomAdjective();
       this.noun = this.randomNoun();
