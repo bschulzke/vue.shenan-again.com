@@ -4,9 +4,9 @@
       <p class="info-header">{{header}}</p>
       <p v-for="paragraph in paragraphs" :key="paragraph.text">{{paragraph.text}}</p>
         <div class="button-wrapper" v-if="buttonText">
-        <a v-if="!targetBlank" class="large-button" :href="buttonLink">{{buttonText ? buttonText : 'Button' }}</a>
+        <router-link v-if="useRouter" class="large-button" :to="buttonLink">{{buttonText}}</router-link>  
+        <a v-if="!useRouter && !targetBlank" class="large-button" :href="buttonLink">{{buttonText ? buttonText : 'Button' }}</a>
         <a v-if="targetBlank" class="large-button" :href="buttonLink"  target="_blank">{{buttonText ? buttonText : 'Button' }}</a>
-        <div v-html="rawHtml"></div>  
         </div>       
     </div>
   </div>    
@@ -22,6 +22,7 @@ export default {
     paragraphs: Array,
     targetBlank: Boolean,
     rawHtml: String,
+    useRouter: Boolean,
   }
 }
 </script>

@@ -1,7 +1,14 @@
 <template>
   <div class="about">
     <InfoBox :header="header1" :paragraphs="paragraphs1"></InfoBox>
-    <InfoBox :header="header2" :paragraphs="paragraphs2" :buttonText="buttonText" :buttonLink="buttonLink"></InfoBox>
+    <InfoBox 
+    :header="header2" 
+    :paragraphs="paragraphs2" 
+    :buttonText="buttonText" 
+    :buttonLink="buttonLink"
+    :useRouter="useRouter" 
+    >
+    </InfoBox>
   </div>
 </template>
 
@@ -30,6 +37,7 @@ export default {
       ],
       buttonText: "Rulebook",
       buttonLink: "/rulebook",
+      useRouter: true,
       }
     }
   }
