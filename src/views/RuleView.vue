@@ -39,15 +39,17 @@ export default {
     flex-direction: column;
     width: 100%;
     position: absolute;
+    height: 100%;
+  }
+
+  .iframe-pdf {
+    height: 100%;
+    width: 100%;
   }
 
    @media only screen and (min-width: 901px) {
     .rulebook {
       height: 100%;
-    }
-    .iframe-pdf {
-      height: 100%;
-      width: 50%;
     }
   }
 
