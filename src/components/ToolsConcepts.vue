@@ -22,7 +22,7 @@
             </div>
             <div class="grid-view card">
               <div id="generated-role" class="card-text">
-                  {{adjective}} {{role}} with {{article}} {{noun}}
+                  <span class="card-text variable-word" @dblclick="getAdjective">{{adjective}}</span> {{role}} with {{article}} {{noun}}
               </div>
             </div>
             </div>
@@ -87,6 +87,10 @@ export default {
       this.noun = this.randomNoun();
     },
 
+    getAdjective() {
+      this.adjective = this.adjectives[this.randomInt(this.adjectives.length)];
+    },
+
     randomAdjective() {
       return this.adjectives[this.randomInt(this.adjectives.length)];
     },
@@ -138,4 +142,12 @@ export default {
           margin-top: 2rem;
       }
     }
+  .card-text {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
+  }  
 </style>

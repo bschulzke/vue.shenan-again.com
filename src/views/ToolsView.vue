@@ -21,7 +21,7 @@ export default {
   name: 'ToolsView',
     data() {
       return {
-        activeTool: 'calculator',
+        activeTool: 'charts',
       }
     },
     components: {
