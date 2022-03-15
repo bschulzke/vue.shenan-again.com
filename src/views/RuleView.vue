@@ -1,17 +1,16 @@
 <template>
   <div class="rulebook">
-    <InfoBox :header="header" :buttonText="buttonText" :paragraphs="paragraphs" :buttonLink="buttonLink" :targetBlank="targetBlank"/>
+    <iframe class="iframe-pdf" src="/resources/rulebook.pdf"></iframe>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import InfoBox from '@/components/InfoBox.vue'
 
 export default {
   name: 'RuleView',
   components: {
-    InfoBox
+
   },
   data() {
     return {
@@ -45,6 +44,10 @@ export default {
    @media only screen and (min-width: 901px) {
     .rulebook {
       height: 100%;
+    }
+    .iframe-pdf {
+      height: 100%;
+      width: 50%;
     }
   }
 
