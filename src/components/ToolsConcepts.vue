@@ -5,7 +5,8 @@
               <div class="info-header">
                 Character Concepts
               </div>
-              <p>Your character concept is a one-sentence description of the character you'll play in Shenan-Again. See the rulebook for details on character creation.</p>
+              <p>Generate and customize character Concepts&#8212;one-sentence descriptions of Shenan-Again characters. 
+                See the <router-link to="/rulebook">rulebook</router-link> for details on character creation.</p>
               <div class="display-rows">
                 <select id="role-selector" class="form-select" aria-label="Default select example" v-model="selectedRole">
                   <option value="random" selected>Random Role</option>
