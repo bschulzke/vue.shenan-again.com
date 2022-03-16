@@ -168,7 +168,7 @@ export default {
           margin-top: 2rem;
       }
       .variable-word:hover {
-        color: #0463a3;
+        color: #3e83D0;
         cursor: pointer;
         font-weight: bold;
         font-style: italic;
@@ -176,7 +176,7 @@ export default {
     }
     @media only screen and (max-width: 900px) {
       .variable-word {
-        color: #0463a3;
+        color: #3e83D0;
         font-weight: bold;
         font-style: italic;
       }

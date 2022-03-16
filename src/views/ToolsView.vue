@@ -3,7 +3,7 @@
     <div class="tools-nav">
       <a @click="openCharts" :class="[{active : showCharts}]">Charts</a>
       <a @click="openCalculator" :class="[{active : showCalculator}]">Calculator</a>
-      <a @click="openConcepts" :class="[{active : showConcepts}]">Roles</a>
+      <a @click="openConcepts" :class="[{active : showConcepts}]">Concepts</a>
     </div>
     <ToolsCalc  v-show="showCalculator"></ToolsCalc>
     <ToolsCharts v-show="showCharts"></ToolsCharts>

@@ -51,6 +51,9 @@ export default {
     .rulebook {
       height: 100%;
     }
+    .iframe-pdf {
+      width: 70%;
+    }
   }
 
 </style>
