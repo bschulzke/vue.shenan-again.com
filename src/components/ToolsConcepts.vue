@@ -22,10 +22,12 @@
             </div>
             <div class="grid-view card">
               <div id="generated-role" class="card-text">
-                  <span v-if="!showAdjectiveBox" @contextmenu.prevent="toggleAdjective" id="adjective" class="card-text variable-word" v-on:click="getAdjective">{{adjective}}</span> 
+                  <span v-if="!showAdjectiveBox" id="adjective" class="card-text variable-word" v-on:click="toggleAdjective">{{adjective}}</span> 
                   <input v-if="showAdjectiveBox" v-model="adjective" v-on:keyup.enter="toggleAdjective" class="card-text small-input"/>
-                  {{role}} with {{article}} 
-                  <span v-if="!showNounBox" @contextmenu.prevent="toggleNoun" id="noun" class="card-text variable-word" @click="getNoun">{{noun}}</span>
+                  <span v-if="!showRoleBox" id="role" class="card-text variable-word" v-on:click="toggleRole"> {{role}}</span> 
+                  <input v-if="showRoleBox" v-model="role" v-on:keyup.enter="toggleRole" class="card-text small-input"/>
+                  with {{article}} 
+                  <span v-if="!showNounBox" id="noun" class="card-text variable-word" @click="toggleNoun">{{noun}}</span>
                   <input v-if="showNounBox" v-model="noun" v-on:keyup.enter="toggleNoun" class="card-text small-input"/>
               </div>
             </div>
@@ -48,6 +50,7 @@ export default {
           colors: ['red','orange','yellow','green','blue','purple','pink','grey','black','brown'],
           showAdjectiveBox: false,
           showNounBox: false,
+          showRoleBox: false,
       }
   },
   computed: {
@@ -140,7 +143,10 @@ export default {
     },
     toggleNoun() {
       this.showNounBox = !this.showNounBox;
-    }
+    },
+    toggleRole() {
+      this.showRoleBox = !this.showRoleBox;
+    },
   }
 }
 </script>
@@ -161,8 +167,15 @@ export default {
           margin-top: 2rem;
       }
       .variable-word:hover {
-        color: #005085;
+        color: #0463a3;
         cursor: pointer;
+        font-weight: bold;
+        font-style: italic;
+      }
+    }
+    @media only screen and (max-width: 900px) {
+      .variable-word {
+        color: #0463a3;
         font-weight: bold;
         font-style: italic;
       }
