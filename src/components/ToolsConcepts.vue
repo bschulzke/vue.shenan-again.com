@@ -22,7 +22,11 @@
             </div>
             <div class="grid-view card">
               <div id="generated-role" class="card-text">
-                  <span class="card-text variable-word" @dblclick="getAdjective">{{adjective}}</span> {{role}} with {{article}} {{noun}}
+                  <span v-if="!showAdjectiveBox" @contextmenu.prevent="toggleAdjective" id="adjective" class="card-text variable-word" v-on:click="getAdjective">{{adjective}}</span> 
+                  <input v-if="showAdjectiveBox" v-model="adjective" v-on:keyup.enter="toggleAdjective" class="card-text small-input"/>
+                  {{role}} with {{article}} 
+                  <span v-if="!showNounBox" @contextmenu.prevent="toggleNoun" id="noun" class="card-text variable-word" @click="getNoun">{{noun}}</span>
+                  <input v-if="showNounBox" v-model="noun" v-on:keyup.enter="toggleNoun" class="card-text small-input"/>
               </div>
             </div>
             </div>
@@ -42,6 +46,8 @@ export default {
           adjectives: this.$root.$data.adjectives,
           roles: ['burglar', 'con', 'muscle', 'hacker'],
           colors: ['red','orange','yellow','green','blue','purple','pink','grey','black','brown'],
+          showAdjectiveBox: false,
+          showNounBox: false,
       }
   },
   computed: {
@@ -91,6 +97,10 @@ export default {
       this.adjective = this.adjectives[this.randomInt(this.adjectives.length)];
     },
 
+    getNoun() {
+      this.noun = this.nouns[this.randomInt(this.nouns.length)];
+    },
+
     randomAdjective() {
       return this.adjectives[this.randomInt(this.adjectives.length)];
     },
@@ -124,6 +134,12 @@ export default {
     return (
         isGerund || endsInY || ual || ics || ial || inal || isColor
     );
+    },
+    toggleAdjective() {
+      this.showAdjectiveBox = !this.showAdjectiveBox;
+    },
+    toggleNoun() {
+      this.showNounBox = !this.showNounBox;
     }
   }
 }
@@ -136,10 +152,19 @@ export default {
     padding-top: 3.5rem;
     margin-top: 1rem;
   }
+  .small-input {
+    /* display: none; */
+  }
     @media only screen and (min-width: 901px) {
       .info {
           padding: 3rem 5rem;
           margin-top: 2rem;
+      }
+      .variable-word:hover {
+        color: #005085;
+        cursor: pointer;
+        font-weight: bold;
+        font-style: italic;
       }
     }
   .card-text {

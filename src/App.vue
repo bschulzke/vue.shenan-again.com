@@ -42,7 +42,9 @@
 
 <script>
 
+
   export default {
+    
     computed: {
     currentRouteName() {
         return this.$route.name;
@@ -61,7 +63,7 @@
     },
     contribute() {
       return this.currentRouteName == 'contribute';
-    }
+    },
 },
 }
 </script>
