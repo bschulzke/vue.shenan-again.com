@@ -34,8 +34,8 @@
         <a class="footer-text grey-link" href="https://github.com/bschulzke/vue.shenan-again.com"  target="_blank">GitHub</a>
       </li>
     </ul>
-    <router-link to="/contact"><i class="fa-solid fa-pen-to-square change-color"></i></router-link>
     <a class="footer-text fullscreen">&copy; 2022 Ben Schulzke</a>
+    <router-link to="/contact"><i class="fa-solid fa-envelope"></i></router-link>
   </nav>
 </div>
 </template>
@@ -75,7 +75,7 @@
           width: 7rem;
         }
     }
-  .change-color {
-    color: red!important;
-  } 
+  .fa-envelope {
+    padding-left: 1rem;
+  }  
 </style>
