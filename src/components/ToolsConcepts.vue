@@ -37,7 +37,11 @@
 </template>
 
 <script>
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
+
 export default {
+  
   name: 'ToolsConcepts',
   data() {
       return {
@@ -159,9 +163,6 @@ export default {
     padding-top: 3.5rem;
     margin-top: 1rem;
   }
-  .small-input {
-    /* display: none; */
-  }
     @media only screen and (min-width: 901px) {
       .info {
           padding: 3rem 5rem;
@@ -188,5 +189,6 @@ export default {
        -moz-user-select: none; /* Old versions of Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently */
+    color: black;        
   }  
 </style>

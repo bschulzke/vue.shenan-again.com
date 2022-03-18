@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link to="/"><div :class="['nav-link', {active : home}]" href="">Home</div></router-link>
+          <router-link to="/"><div :class="['nav-link', {active : home}]">Home</div></router-link>
         </li>
         <li class="nav-item">
           <router-link to="/rulebook"><div :class="['nav-link', {active : rulebook}]">Rulebook</div></router-link>
@@ -34,7 +34,7 @@
         <a class="footer-text grey-link" href="https://github.com/bschulzke/vue.shenan-again.com"  target="_blank">GitHub</a>
       </li>
     </ul>
-    <router-link to="/contact"><div class="footer-text grey-link">Contact Us</div></router-link>
+    <router-link to="/contact"><i class="fa-solid fa-pen-to-square change-color"></i></router-link>
     <a class="footer-text fullscreen">&copy; 2022 Ben Schulzke</a>
   </nav>
 </div>
@@ -42,9 +42,7 @@
 
 <script>
 
-
   export default {
-    
     computed: {
     currentRouteName() {
         return this.$route.name;
@@ -77,4 +75,7 @@
           width: 7rem;
         }
     }
+  .change-color {
+    color: red!important;
+  } 
 </style>
