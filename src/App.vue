@@ -29,13 +29,11 @@
   <img class="background-image" src="/images/background.png"/>
 <router-view/>
   <nav class="navbar footer fixed-bottom navbar-dark bg-dark">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="footer-text grey-link" href="https://github.com/bschulzke/vue.shenan-again.com"  target="_blank">GitHub</a>
-      </li>
-    </ul>
+    <a href="https://github.com/bschulzke/vue.shenan-again.com"  target="_blank"><i class="fa-brands fa-github"></i></a>
+    <div>
     <a class="footer-text fullscreen">&copy; 2022 Ben Schulzke</a>
     <router-link to="/contact"><i class="fa-solid fa-envelope"></i></router-link>
+    </div>
   </nav>
 </div>
 </template>
