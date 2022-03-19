@@ -29,10 +29,10 @@
   <img class="background-image" src="/images/background.png"/>
 <router-view/>
   <nav class="navbar footer fixed-bottom navbar-dark bg-dark">
-    <a href="https://github.com/bschulzke/vue.shenan-again.com"  target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href="https://github.com/bschulzke/vue.shenan-again.com"  target="_blank"><font-awesome-icon icon="fa-brands fa-github" class="grey-link"/></a>
     <div>
     <a class="footer-text fullscreen">&copy; 2022 Ben Schulzke</a>
-    <router-link to="/contact"><i class="fa-solid fa-envelope"></i></router-link>
+    <router-link to="/contact"><font-awesome-icon icon="fa-solid fa-envelope" class="grey-link" /></router-link>
     </div>
   </nav>
 </div>
@@ -73,7 +73,13 @@
           width: 7rem;
         }
     }
-  .fa-envelope {
-    padding-left: 1rem;
-  }  
+  .grey-link path {
+    fill: grey;
+  }
+  .footer {
+    padding-bottom: 2rem;
+  }
+  .footer-text {
+    padding: 0 1rem;
+  }
 </style>
