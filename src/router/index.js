@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import RuleView from '../views/RuleView.vue'
+import ToolsView from '../views/ToolsView.vue'
 
 Vue.use(VueRouter)
 
@@ -32,7 +33,7 @@ const routes = [
     path: '/tools',
     name: 'tools',
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/ToolsView.vue')
+    component: ToolsView
   },
   {
     path: '/contact',
