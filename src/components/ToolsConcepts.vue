@@ -23,7 +23,8 @@
             </div>
             <div class="grid-view card">
               <div class="card-menu">
-                <font-awesome-icon icon="fa-regular fa-pen-to-square" class="card-option"/>
+                <span @click="openCard" v-if="!editing"><font-awesome-icon icon="fa-regular fa-pen-to-square" class="card-option"/></span>
+                <span @click="closeCard" v-if="editing"><font-awesome-icon icon="fa-solid fa-xmark" class="card-option"/></span>
                 <font-awesome-icon icon="fa-regular fa-floppy-disk" class="card-option"/>
               </div>
               <div id="generated-role" class="card-text">
@@ -60,6 +61,7 @@ export default {
           showAdjectiveBox: false,
           showNounBox: false,
           showRoleBox: false,
+          editing: false,
       }
   },
   computed: {
@@ -85,6 +87,11 @@ export default {
         this.role = this.randomRole();
       } else {
         this.role = this.selectedRole;
+      }
+    },
+    editing(newBool) {
+      if (newBool === false) {
+        this.showRoleBox = false;
       }
     }
   },
@@ -156,6 +163,18 @@ export default {
     toggleRole() {
       this.showRoleBox = !this.showRoleBox;
     },
+    closeCard() {
+      this.showAdjectiveBox = false;
+      this.showNounBox = false;
+      this.showRoleBox - false;
+      this.editing = false;
+    },
+    openCard() {
+      this.showAdjectiveBox = true;
+      this.showNounBox = true;
+      this.showRoleBox = true;
+      this.editing = true;
+    }
   }
 }
 </script>
