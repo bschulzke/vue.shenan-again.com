@@ -156,12 +156,21 @@ export default {
     },
     toggleAdjective() {
       this.showAdjectiveBox = !this.showAdjectiveBox;
+      if (!this.showNounBox && !this.showRoleBox) {
+        this.editing = !this.editing;
+      }
     },
     toggleNoun() {
       this.showNounBox = !this.showNounBox;
+      if (!this.showAdjectiveBox && !this.showRoleBox) {
+        this.editing = !this.editing;
+      }
     },
     toggleRole() {
       this.showRoleBox = !this.showRoleBox;
+      if (!this.showAdjectiveBox && !this.showBox) {
+        this.editing = !this.editing;
+      }
     },
     closeCard() {
       this.showAdjectiveBox = false;
