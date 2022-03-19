@@ -423,6 +423,9 @@ a:not(.nav-item) {
 }
 
 @media only screen and (max-width: 900px) {
+  #generated-role {
+    padding: 1.5rem;
+  }
   .navbar-collapse > .navbar-nav {
     margin-left: auto;
   }

@@ -22,6 +22,10 @@
               </div>
             </div>
             <div class="grid-view card">
+              <div class="card-menu">
+                <font-awesome-icon icon="fa-regular fa-pen-to-square" class="card-option"/>
+                <font-awesome-icon icon="fa-regular fa-floppy-disk" class="card-option"/>
+              </div>
               <div id="generated-role" class="card-text">
                   <span v-if="!showAdjectiveBox" id="adjective" class="card-text variable-word" v-on:click="toggleAdjective">{{adjective}}</span> 
                   <input v-if="showAdjectiveBox" v-model="adjective" v-on:keyup.enter="toggleAdjective" class="card-text small-input"/>
@@ -160,8 +164,8 @@ export default {
 <style scoped>
   .main-view {
     height: 100%;
-    padding-top: 3.5rem;
-    margin-top: 1rem;
+    /* padding-top: 5rem;
+    margin-top: 2rem; */
   }
     @media only screen and (min-width: 901px) {
       .info {
@@ -181,6 +185,9 @@ export default {
         font-weight: bold;
         font-style: italic;
       }
+      .card {
+        padding-bottom: 2rem;
+      }  
     }
   .card-text {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -189,5 +196,18 @@ export default {
        -moz-user-select: none; /* Old versions of Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently */
-  }  
+  }
+  .card-option path {
+    fill: grey;
+  }
+  .card-option {
+    padding: 0 0.25rem;
+    max-height: 1.25rem;
+  }
+  .card-menu {
+    position:absolute;
+    right:0;
+    top:0;
+    margin: 0.5rem;
+  }
 </style>

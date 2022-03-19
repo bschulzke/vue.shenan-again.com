@@ -7,7 +7,9 @@
     </div>
     <ToolsCalc  v-show="showCalculator"></ToolsCalc>
     <ToolsCharts v-show="showCharts"></ToolsCharts>
-    <ToolsConcepts v-show="showConcepts"></ToolsConcepts>
+    <div f-if="showConcepts" class="concepts">
+        <ToolsConcepts v-show="showConcepts"></ToolsConcepts>
+    </div>
   </div>
 </template>
 
@@ -91,4 +93,9 @@ export default {
     cursor: pointer;
   }
 
+  @media only screen and (max-width: 900px) {
+      .concepts {
+      padding-top: 7rem;
+    }
+  }
 </style>
