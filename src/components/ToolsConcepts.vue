@@ -198,11 +198,14 @@ export default {
             user-select: none; /* Non-prefixed version, currently */
   }
   .card-option path {
-    fill: grey;
+    fill: #3e83D0;
   }
   .card-option {
     padding: 0 0.25rem;
     max-height: 1.25rem;
+  }
+  .card-option:hover {
+    cursor: pointer;
   }
   .card-menu {
     position:absolute;
