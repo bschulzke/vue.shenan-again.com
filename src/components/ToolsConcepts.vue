@@ -168,7 +168,7 @@ export default {
     },
     toggleRole() {
       this.showRoleBox = !this.showRoleBox;
-      if (!this.showAdjectiveBox && !this.showBox) {
+      if (!this.showAdjectiveBox && !this.showNounBox) {
         this.editing = !this.editing;
       }
     },
