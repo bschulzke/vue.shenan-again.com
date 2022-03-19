@@ -32,7 +32,7 @@
     <a href="https://github.com/bschulzke/vue.shenan-again.com"  target="_blank"><font-awesome-icon icon="fa-brands fa-github" class="grey-link"/></a>
     <div>
     <a class="footer-text fullscreen">&copy; 2022 Ben Schulzke</a>
-    <router-link to="/contact"><font-awesome-icon icon="fa-solid fa-envelope" class="grey-link" /></router-link>
+    <router-link to="/contact"><font-awesome-icon icon="fa-regular fa-envelope" class="grey-link" /></router-link>
     </div>
   </nav>
 </div>
