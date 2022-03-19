@@ -189,6 +189,5 @@ export default {
        -moz-user-select: none; /* Old versions of Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently */
-    color: black;        
   }  
 </style>
