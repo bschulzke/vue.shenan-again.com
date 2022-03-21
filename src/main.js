@@ -25,5 +25,10 @@ let data = {
 new Vue({
   router,
   data,
+  methods: {
+    closeMenu() {
+      this.$refs.fileInput.click()
+    }
+  },
   render: h => h(App)
 }).$mount('#app')

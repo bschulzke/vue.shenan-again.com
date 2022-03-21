@@ -1,5 +1,5 @@
 <template>
-    <div class="main-view">
+        <div class="main-view">
           <div class="grid-view">
             <div class="info">
               <div class="info-header">
@@ -25,7 +25,7 @@
               <div class="card-menu">
                 <span @click="openCard" v-if="!editing"><font-awesome-icon icon="fa-regular fa-pen-to-square" class="card-option"/></span>
                 <span @click="closeCard" v-if="editing"><font-awesome-icon icon="fa-solid fa-xmark" class="card-option"/></span>
-                <font-awesome-icon icon="fa-regular fa-floppy-disk" class="card-option"/>
+                <span @click="saveCard"><font-awesome-icon icon="fa-regular fa-floppy-disk" class="card-option"/></span>
               </div>
               <div id="generated-role" class="card-text">
                   <span v-if="!showAdjectiveBox" id="adjective" class="card-text variable-word" v-on:click="toggleAdjective">{{adjective}}</span> 
@@ -38,7 +38,29 @@
               </div>
             </div>
             </div>
-    </div>    
+            <div v-if="hasSavedCards" class="grid-view">
+            <div class="grid-view card">
+              <div class="card-menu">
+                <span @click="roleIndex++"><font-awesome-icon icon="fa-solid fa-plus" class="card-option"/></span>
+                <span @click="roleIndex--"><font-awesome-icon icon="fa-solid fa-minus" class="card-option"/></span>
+              </div>
+              <div id="saved-role" class="card-text">
+              <div id="saved-role" class="card-text">
+                <div id="generated-role" class="card-text">
+                  <span v-if="!showSavedAdjBox" id="savedAdjective" class="card-text variable-word" v-on:click="toggleSavedAdj">{{savedCards[roleIndex].adjective}}</span> 
+                  <input v-if="showSavedAdjBox" v-model="savedCards[roleIndex].adjective" v-on:keyup.enter="toggleSavedAdj" class="card-text small-input"/>
+                  <span v-if="!showSavedRoleBox" id="savedRole" class="card-text variable-word" v-on:click="toggleSavedRole"> {{savedCards[roleIndex].role}}</span> 
+                  <input v-if="showSavedRoleBox" v-model="savedCards[roleIndex].role" v-on:keyup.enter="toggleSavedRole" class="card-text small-input"/>
+                  with {{savedArticle}} 
+                  <span v-if="!showSavedNounBox" id="savedNoun" class="card-text variable-word" @click="toggleSavedNoun">{{savedCards[roleIndex].noun}}</span>
+                  <input v-if="showSavedNounBox" v-model="savedCards[roleIndex].noun" v-on:keyup.enter="toggleSavedNoun" class="card-text small-input"/>
+                  <span class="card-text"> {{roleIndex + 1}} / {{savedCards.length}}</span>
+              </div>
+              </div>
+              </div>
+            </div>
+            </div>
+          </div>
 </template>
 
 <script>
@@ -62,6 +84,11 @@ export default {
           showNounBox: false,
           showRoleBox: false,
           editing: false,
+          showSavedAdjBox: false,
+          showSavedNounBox: false,
+          showSavedRoleBox: false,
+          savedCards: [],
+          roleIndex: 0,
       }
   },
   computed: {
@@ -74,6 +101,27 @@ export default {
             article = "";
         } 
         return article;
+    },
+    hasSavedCards() {
+      if (this.savedCards.length > 0) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    },
+    savedArticle() {
+    let article = "a";
+     if (this.isVowel(this.savedNoun.charAt(0))) {
+            article = "an";   
+        }
+        if (this.savedNoun.charAt(this.savedNoun.length - 1) === 's') {
+            article = "";
+        } 
+        return article;
+    },
+    savedNoun() {
+      return this.savedCards[this.roleIndex].noun;
     },
   },
   created() {
@@ -93,6 +141,14 @@ export default {
       if (newBool === false) {
         this.showRoleBox = false;
       }
+    },
+    roleIndex(newIndex) {
+      if (newIndex < 0) {
+        this.roleIndex = 0;
+      }
+      if (newIndex > this.savedCards.length - 1) {
+        this.roleIndex = this.savedCards.length - 1;
+      } 
     }
   },
   methods: {
@@ -172,6 +228,15 @@ export default {
         this.editing = !this.editing;
       }
     },
+    toggleSavedAdj() {
+      this.showSavedAdjBox = !this.showSavedAdjBox;
+    },
+    toggleSavedNoun() {
+      this.showSavedNounBox = !this.showSavedNounBox;
+    },
+    toggleSavedRole() {
+      this.showSavedRoleBox = !this.showSavedRoleBox;
+    },
     closeCard() {
       this.showAdjectiveBox = false;
       this.showNounBox = false;
@@ -183,6 +248,10 @@ export default {
       this.showNounBox = true;
       this.showRoleBox = true;
       this.editing = true;
+    },
+    saveCard() {
+      let role = {adjective: this.adjective, role: this.role, noun: this.noun };
+      this.savedCards.push(role);
     }
   }
 }

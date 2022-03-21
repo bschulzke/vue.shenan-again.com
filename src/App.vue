@@ -9,19 +9,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link to="/"><div :class="['nav-link', {active : home}]">Home</div></router-link>
+          <router-link to="/"><div @click="closeMenu"  :class="['nav-link', {active : home}]">Home</div></router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/rulebook"><div :class="['nav-link', {active : rulebook}]">Rulebook</div></router-link>
+          <router-link to="/rulebook"><div @click="closeMenu"  :class="['nav-link', {active : rulebook}]">Rulebook</div></router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/about"><div :class="['nav-link', {active : about}]">About</div></router-link>
+          <router-link to="/about"><div @click="closeMenu"  :class="['nav-link', {active : about}]">About</div></router-link>
         </li>
-        <li class="nav-item">
-          <router-link to="/tools"><div :class="['nav-link', {active : tools}]">Tools</div></router-link>
+        <li v-on:click="closeMenu" class="nav-item">
+          <router-link to="/tools"><div @click="closeMenu"  :class="['nav-link', {active : tools}]">Tools</div></router-link>
         </li>
-        <li class="nav-item">
-          <router-link to="/contribute"><div :class="['nav-link', {active : contribute}]">Contribute</div></router-link>
+        <li v-on:click="closeMenu"  class="nav-item">
+          <router-link to="/contribute"><div @click="closeMenu"  :class="['nav-link', {active : contribute}]">Contribute</div></router-link>
         </li>
       </ul>
     </div>
@@ -39,7 +39,6 @@
 </template>
 
 <script>
-
   export default {
     computed: {
     currentRouteName() {
@@ -60,7 +59,12 @@
     contribute() {
       return this.currentRouteName == 'contribute';
     },
-},
+  },
+  methods: {
+    closeMenu() {
+      console.log("$('.navbar-toggler').click();");
+    }
+  },
 }
 </script>
 
