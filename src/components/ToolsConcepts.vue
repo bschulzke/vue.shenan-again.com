@@ -20,7 +20,7 @@
                 </div>
               </div>
             </div>
-            <div class=" card">
+            <div class="grid-view card">
               <div class="card-menu">
                 <span @click="openCard" v-if="!editing"><font-awesome-icon icon="fa-regular fa-pen-to-square" class="card-option"/></span>
                 <span @click="closeCard" v-if="editing"><font-awesome-icon icon="fa-solid fa-xmark" class="card-option"/></span>
@@ -38,6 +38,9 @@
             </div>
             <div v-if="hasSavedCards" class="">
             <div class=" card">
+              <div @click="deleteCard" class="card-trash">
+                <span><font-awesome-icon icon="fa-solid fa-trash" class="card-option"/></span>
+              </div>
                 <span @click="roleIndex--" id="left-arrow" ><font-awesome-icon icon="fa-solid fa-angle-left" :class="leftArrow"/></span>
                 <span @click="roleIndex++" id="right-arrow" ><font-awesome-icon icon="fa-solid fa-angle-right" :class="rightArrow"/></span>
               <div id="saved-role" class="card-text">
@@ -262,8 +265,14 @@ export default {
     saveCard() {
       let role = {adjective: this.adjective, role: this.role, noun: this.noun };
       this.savedCards.push(role);
-    }
-  }
+    },
+      deleteCard() {
+    let index = this.roleIndex;
+    if (index > -1) {
+      this.savedCards.splice(index, 1);
+        }
+      },
+  },
 }
 </script>
 
@@ -328,6 +337,14 @@ export default {
     right:0;
     top:0;
     margin: 0.5rem;
+  }
+  .card-trash {
+    position:absolute;
+    right:0;
+    top:0;
+  }
+  .fa-trash {
+    height: 1rem;
   }
   #left-arrow {
     position: absolute;
