@@ -1,6 +1,5 @@
 <template>
-        <div class="main-view">
-          <div class="grid-view">
+        <div class="main-view grid-view">
             <div class="info">
               <div class="info-header">
                 Character Concepts
@@ -21,7 +20,7 @@
                 </div>
               </div>
             </div>
-            <div class="grid-view card">
+            <div class=" card">
               <div class="card-menu">
                 <span @click="openCard" v-if="!editing"><font-awesome-icon icon="fa-regular fa-pen-to-square" class="card-option"/></span>
                 <span @click="closeCard" v-if="editing"><font-awesome-icon icon="fa-solid fa-xmark" class="card-option"/></span>
@@ -37,13 +36,10 @@
                   <input v-if="showNounBox" v-model="noun" v-on:keyup.enter="toggleNoun" class="card-text small-input"/>
               </div>
             </div>
-            </div>
-            <div v-if="hasSavedCards" class="grid-view">
-            <div class="grid-view card">
-              <div class="card-menu">
-                <span @click="roleIndex++"><font-awesome-icon icon="fa-solid fa-plus" class="card-option"/></span>
-                <span @click="roleIndex--"><font-awesome-icon icon="fa-solid fa-minus" class="card-option"/></span>
-              </div>
+            <div v-if="hasSavedCards" class="">
+            <div class=" card">
+                <span @click="roleIndex--" id="left-arrow" ><font-awesome-icon icon="fa-solid fa-angle-left" :class="leftArrow"/></span>
+                <span @click="roleIndex++" id="right-arrow" ><font-awesome-icon icon="fa-solid fa-angle-right" :class="rightArrow"/></span>
               <div id="saved-role" class="card-text">
               <div id="saved-role" class="card-text">
                 <div id="generated-role" class="card-text">
@@ -54,10 +50,10 @@
                   with {{savedArticle}} 
                   <span v-if="!showSavedNounBox" id="savedNoun" class="card-text variable-word" @click="toggleSavedNoun">{{savedCards[roleIndex].noun}}</span>
                   <input v-if="showSavedNounBox" v-model="savedCards[roleIndex].noun" v-on:keyup.enter="toggleSavedNoun" class="card-text small-input"/>
-                  <span class="card-text"> {{roleIndex + 1}} / {{savedCards.length}}</span>
+                </div>
+                </div>
               </div>
-              </div>
-              </div>
+              <div id="index-indicator" class="card-text"> {{roleIndex + 1}} / {{savedCards.length}}</div>
             </div>
             </div>
           </div>
@@ -123,6 +119,20 @@ export default {
     savedNoun() {
       return this.savedCards[this.roleIndex].noun;
     },
+    leftArrow() {
+      if (this.roleIndex == 0) {
+        return "arrow-faded";
+      } else {
+        return "arrow-active";
+      }
+    },
+    rightArrow() {
+      if (this.roleIndex == this.savedCards.length - 1) {
+        return "arrow-faded";
+      } else {
+        return "arrow-active";
+      }
+    }
   },
   created() {
     this.noun = this.randomNoun();
@@ -261,8 +271,8 @@ export default {
 <style scoped>
   .main-view {
     height: 100%;
-    /* padding-top: 5rem;
-    margin-top: 2rem; */
+    padding-top: 5rem;
+    padding-bottom: 2rem;
   }
     @media only screen and (min-width: 901px) {
       .info {
@@ -297,6 +307,15 @@ export default {
   .card-option path {
     fill: #3e83D0;
   }
+  .arrow-active path {
+    fill: grey;
+  }
+  .arrow-faded path {
+    fill: #D3D3D3;
+  }
+  .arrow-active:hover {
+    cursor: pointer;
+  }
   .card-option {
     padding: 0 0.25rem;
     max-height: 1.25rem;
@@ -309,5 +328,23 @@ export default {
     right:0;
     top:0;
     margin: 0.5rem;
+  }
+  #left-arrow {
+    position: absolute;
+    padding-left: 0.5rem;
+    left: 0;
+    bottom: 6rem;
+  }
+  #right-arrow {
+    position: absolute;
+    padding-right: 0.5rem;
+    right: 0;
+    bottom: 6rem;
+  }
+  #index-indicator {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    font-size: 1rem;
   }
 </style>
