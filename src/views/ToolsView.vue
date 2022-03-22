@@ -1,15 +1,13 @@
 <template>
-  <div class="tools" v-bind:style="{ height: showCharts ? 'auto' : '100%' }">
+  <div class="tools" v-bind:style="{ height: showCharts || showConcepts ? 'auto' : '100%' }">
     <div class="tools-nav">
       <a @click="openCharts" :class="[{active : showCharts}]">Charts</a>
-      <a @click="openCalculator" :class="[{active : showCalculator}]">Calculator</a>
-      <a @click="openConcepts" :class="[{active : showConcepts}]">Concepts</a>
+      <a @click="openCalculator" :class="[{active : showCalculator}]">Probability</a>
+      <a @click="openConcepts" :class="[{active : showConcepts}]">Characters</a>
     </div>
     <ToolsCalc  v-show="showCalculator"></ToolsCalc>
     <ToolsCharts v-show="showCharts"></ToolsCharts>
-    <div f-if="showConcepts" class="concepts">
-        <ToolsConcepts v-show="showConcepts"></ToolsConcepts>
-    </div>
+    <ToolsConcepts v-show="showConcepts"></ToolsConcepts>
   </div>
 </template>
 
@@ -65,9 +63,12 @@ export default {
     padding: 4rem 0;
     background-color: rgba(229,229,229, 0.65);
     flex-direction: column;
-    /* height: 100%; */
     width: 100%;
     position: absolute;
+    height: 100vh;
+  }
+
+  .concepts {
     height: 100%;
   }
 
@@ -96,7 +97,7 @@ export default {
 
   @media only screen and (max-width: 900px) {
       .concepts {
-      padding-top: 7rem;
+      /* padding-top: 7rem; */
     }
   }
 </style>

@@ -26,7 +26,7 @@
       </ul>
     </div>
   </nav>
-  <img class="background-image" src="/images/background.png"/>
+  <div class="background-image greyBackground"><img src="/images/background.png"/></div>
 <router-view/>
   <nav class="navbar footer fixed-bottom navbar-dark bg-dark">
     <a href="https://github.com/bschulzke/vue.shenan-again.com"  target="_blank"><font-awesome-icon icon="fa-brands fa-github" class="grey-link"/></a>
@@ -85,5 +85,8 @@
   }
   .footer-text {
     padding: 0 1rem;
+  }
+  .greyBackground {
+    background-color: rgba(229,229,229, 0.65);
   }
 </style>

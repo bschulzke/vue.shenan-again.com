@@ -1,11 +1,12 @@
 <template>
-        <div class="main-view grid-view">
+        <div class="main-view">
+          <div class="top-grid">
+            <div class="grid-view"> 
             <div class="info">
               <div class="info-header">
-                Character Concepts
+                Character Cards
               </div>
-              <p>Generate and customize character Concepts&#8212;one-sentence descriptions of Shenan-Again characters. 
-                See the <router-link to="/rulebook">rulebook</router-link> for details on character creation.</p>
+              <p>Create and save character Cards&#8212;one-sentence descriptions of Shenan-Again characters.
               <div class="display-rows">
                 <select id="role-selector" class="form-select" aria-label="Default select example" v-model="selectedRole">
                   <option value="random" selected>Random Role</option>
@@ -19,8 +20,10 @@
                   <a class="large-button" @click="getRole">Generate</a>
                 </div>
               </div>
+              </div>
             </div>
-            <div class="grid-view card">
+            <div class="grid-view">
+            <div class="card">
               <div class="card-menu">
                 <span @click="openCard" v-if="!editing"><font-awesome-icon icon="fa-regular fa-pen-to-square" class="card-option"/></span>
                 <span @click="closeCard" v-if="editing"><font-awesome-icon icon="fa-solid fa-xmark" class="card-option"/></span>
@@ -36,8 +39,10 @@
                   <input v-if="showNounBox" v-model="noun" v-on:keyup.enter="toggleNoun" class="card-text small-input"/>
               </div>
             </div>
-            <div v-if="hasSavedCards" class="">
-            <div class=" card">
+            </div>
+          </div>
+            <div v-if="hasSavedCards" class="grid-view">
+            <div class="card">
               <div @click="deleteCard" class="card-trash">
                 <span><font-awesome-icon icon="fa-solid fa-trash" class="card-option"/></span>
               </div>
@@ -88,6 +93,7 @@ export default {
           showSavedRoleBox: false,
           savedCards: [],
           roleIndex: 0,
+          currentId: 0,
       }
   },
   computed: {
@@ -263,14 +269,18 @@ export default {
       this.editing = true;
     },
     saveCard() {
-      let role = {adjective: this.adjective, role: this.role, noun: this.noun };
+      let role = {adjective: this.adjective, role: this.role, noun: this.noun, id: this.currentId };
+      this.currentId++;
       this.savedCards.push(role);
     },
       deleteCard() {
     let index = this.roleIndex;
     if (index > -1) {
-      this.savedCards.splice(index, 1);
-        }
+      console.log(this.savedCards.splice(index, 1));
+      if (this.roleIndex > 0) {
+        this.roleIndex--;
+      }
+      }
       },
   },
 }
@@ -279,9 +289,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .main-view {
-    height: 100%;
-    padding-top: 5rem;
-    padding-bottom: 2rem;
+    width: 100%;
+    height: 100vh;
   }
     @media only screen and (min-width: 901px) {
       .info {
@@ -294,6 +303,10 @@ export default {
         font-weight: bold;
         font-style: italic;
       }
+      .top-grid {
+        display: flex;
+        flex-direction: row;
+      }
     }
     @media only screen and (max-width: 900px) {
       .variable-word {
@@ -303,6 +316,12 @@ export default {
       }
       .card {
         padding-bottom: 2rem;
+      }
+      .grid-view {
+        padding: 1rem;
+      }
+      .main-view {
+        /* margin: 5rem 0; */
       }  
     }
   .card-text {
@@ -350,18 +369,19 @@ export default {
     position: absolute;
     padding-left: 0.5rem;
     left: 0;
-    bottom: 6rem;
+    bottom: 40%;
   }
   #right-arrow {
     position: absolute;
     padding-right: 0.5rem;
     right: 0;
-    bottom: 6rem;
+    bottom: 40%;
   }
   #index-indicator {
     position: absolute;
     bottom: 0.5rem;
     right: 1rem;
     font-size: 1rem;
+    color: grey;
   }
 </style>
