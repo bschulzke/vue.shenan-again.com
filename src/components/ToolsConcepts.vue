@@ -1,8 +1,8 @@
 <template>
-        <div class="main-view">
-          <div class="top-grid">
-            <div class="grid-view"> 
-            <div class="info">
+        <div class="main-view" :style="{margin: hasSavedCards ? '6rem auto' : '0'}">
+            <div class="grid-view">
+            <div class="top-grid"> 
+              <div class="info">
               <div class="info-header">
                 Character Cards
               </div>
@@ -40,9 +40,9 @@
               </div>
             </div>
             </div>
-          </div>
-            <div v-if="hasSavedCards" class="grid-view">
-            <div class="card">
+            </div>
+            <div class="grid-view">
+            <div v-if="hasSavedCards"  class="card">
               <div @click="deleteCard" class="card-trash">
                 <span><font-awesome-icon icon="fa-solid fa-trash" class="card-option"/></span>
               </div>
