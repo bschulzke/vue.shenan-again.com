@@ -1,6 +1,5 @@
 <template>
         <div class="main-view" :style="{margin: hasSavedCards ? '6rem auto' : '0'}">
-            <div class="grid-view">
             <div class="top-grid"> 
               <div class="info">
               <div class="info-header">
@@ -21,7 +20,6 @@
                 </div>
               </div>
               </div>
-            </div>
             <div class="grid-view">
             <div class="card">
               <div class="card-menu">
@@ -42,27 +40,30 @@
             </div>
             </div>
             <div class="grid-view">
-            <div v-if="hasSavedCards"  class="card">
-              <div @click="deleteCard" class="card-trash">
-                <span><font-awesome-icon icon="fa-solid fa-trash" class="card-option"/></span>
-              </div>
-                <span @click="roleIndex--" id="left-arrow" ><font-awesome-icon icon="fa-solid fa-angle-left" :class="leftArrow"/></span>
-                <span @click="roleIndex++" id="right-arrow" ><font-awesome-icon icon="fa-solid fa-angle-right" :class="rightArrow"/></span>
-              <div id="saved-role" class="card-text">
-              <div id="saved-role" class="card-text">
-                <div id="generated-role" class="card-text">
-                  <span v-if="!showSavedAdjBox" id="savedAdjective" class="card-text variable-word" v-on:click="toggleSavedAdj">{{savedCards[roleIndex].adjective}}</span> 
-                  <input v-if="showSavedAdjBox" v-model="savedCards[roleIndex].adjective" v-on:keyup.enter="toggleSavedAdj" class="card-text small-input"/>
-                  <span v-if="!showSavedRoleBox" id="savedRole" class="card-text variable-word" v-on:click="toggleSavedRole"> {{savedCards[roleIndex].role}}</span> 
-                  <input v-if="showSavedRoleBox" v-model="savedCards[roleIndex].role" v-on:keyup.enter="toggleSavedRole" class="card-text small-input"/>
-                  with {{savedArticle}} 
-                  <span v-if="!showSavedNounBox" id="savedNoun" class="card-text variable-word" @click="toggleSavedNoun">{{savedCards[roleIndex].noun}}</span>
-                  <input v-if="showSavedNounBox" v-model="savedCards[roleIndex].noun" v-on:keyup.enter="toggleSavedNoun" class="card-text small-input"/>
+              <div v-if="hasSavedCards">
+                <p class="card-header">Your Cards ({{savedCards.length}})</p>
+                <div class="card">
+                  <div @click="deleteCard" class="card-trash">
+                    <span><font-awesome-icon icon="fa-solid fa-trash" class="card-option"/></span>
+                  </div>
+                    <span @click="roleIndex--" id="left-arrow" ><font-awesome-icon icon="fa-solid fa-angle-left" :class="leftArrow"/></span>
+                    <span @click="roleIndex++" id="right-arrow" ><font-awesome-icon icon="fa-solid fa-angle-right" :class="rightArrow"/></span>
+                  <div id="saved-role" class="card-text">
+                  <div id="saved-role" class="card-text">
+                    <div id="generated-role" class="card-text">
+                      <span v-if="!showSavedAdjBox" id="savedAdjective" class="card-text variable-word" v-on:click="toggleSavedAdj">{{savedCards[roleIndex].adjective}}</span> 
+                      <input v-if="showSavedAdjBox" v-model="savedCards[roleIndex].adjective" v-on:keyup.enter="toggleSavedAdj" class="card-text small-input"/>
+                      <span v-if="!showSavedRoleBox" id="savedRole" class="card-text variable-word" v-on:click="toggleSavedRole"> {{savedCards[roleIndex].role}}</span> 
+                      <input v-if="showSavedRoleBox" v-model="savedCards[roleIndex].role" v-on:keyup.enter="toggleSavedRole" class="card-text small-input"/>
+                      with {{savedArticle}} 
+                      <span v-if="!showSavedNounBox" id="savedNoun" class="card-text variable-word" @click="toggleSavedNoun">{{savedCards[roleIndex].noun}}</span>
+                      <input v-if="showSavedNounBox" v-model="savedCards[roleIndex].noun" v-on:keyup.enter="toggleSavedNoun" class="card-text small-input"/>
+                    </div>
+                    </div>
+                  </div>
+                  <div id="index-indicator" class="card-text"> {{roleIndex + 1}} / {{savedCards.length}}</div>
                 </div>
-                </div>
               </div>
-              <div id="index-indicator" class="card-text"> {{roleIndex + 1}} / {{savedCards.length}}</div>
-            </div>
             </div>
           </div>
 </template>
@@ -322,6 +323,9 @@ export default {
       }
       .main-view {
         /* margin: 5rem 0; */
+      }
+      .card-header {
+        margin-bottom: 1rem;
       }  
     }
   .card-text {
@@ -383,5 +387,18 @@ export default {
     right: 1rem;
     font-size: 1rem;
     color: grey;
+  }
+  .card-header {
+    text-align: center;
+    padding: 0.25rem;
+    font-weight: bold;
+    color: black;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  .ruler {
+    border-top: 1px solid black;
   }
 </style>

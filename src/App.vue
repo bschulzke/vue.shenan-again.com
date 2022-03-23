@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import $ from 'jquery'
   export default {
     computed: {
     currentRouteName() {
@@ -62,7 +63,7 @@
   },
   methods: {
     closeMenu() {
-      console.log("$('.navbar-toggler').click();");
+      $('.navbar-toggler').click();
     }
   },
 }
