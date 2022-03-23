@@ -5,7 +5,7 @@
               <div class="info-header">
                 Character Cards
               </div>
-              <p>Create and save character Cards&#8212;one-sentence descriptions of Shenan-Again characters.
+              <p>Create and save character Cards&mdash;one-sentence descriptions of Shenan-Again characters.
               <div class="display-rows">
                 <select id="role-selector" class="form-select" aria-label="Default select example" v-model="selectedRole">
                   <option value="random" selected>Random Role</option>
@@ -331,8 +331,6 @@ export default {
       }  
     }
   .card-text {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
        -moz-user-select: none; /* Old versions of Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
