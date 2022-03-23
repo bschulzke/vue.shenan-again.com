@@ -292,6 +292,8 @@ export default {
   .main-view {
     width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
   }
     @media only screen and (min-width: 901px) {
       .info {
