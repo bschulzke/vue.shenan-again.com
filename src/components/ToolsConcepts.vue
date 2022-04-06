@@ -198,6 +198,7 @@ export default {
       }
       this.adjective = this.randomAdjective();
       this.noun = this.randomNoun();
+      this.closeCard();
     },
 
     getAdjective() {
@@ -342,6 +343,9 @@ export default {
         display: flex;
         flex-direction: row;
       }
+      .card {
+        max-width: 40rem;
+      }
     }
     @media only screen and (max-width: 900px) {
       .variable-word {
@@ -354,9 +358,6 @@ export default {
       }
       .grid-view {
         padding: 1rem;
-      }
-      .main-view {
-        /* margin: 5rem 0; */
       }
       .card-header {
         margin-bottom: 1rem;
