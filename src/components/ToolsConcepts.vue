@@ -29,12 +29,12 @@
               </div>
               <div id="generated-role" class="card-text">
                   <span v-if="!showAdjectiveBox" id="adjective" class="card-text variable-word" v-on:click="toggleAdjective">{{adjective}}</span> 
-                  <input v-if="showAdjectiveBox" v-model="adjective" v-on:keyup.enter="toggleAdjective" class="card-text small-input"/>
+                  <input maxlength="30" v-if="showAdjectiveBox" v-model="adjective" v-on:keyup.enter="toggleAdjective" class="card-text small-input"/>
                   <span v-if="!showRoleBox" id="role" class="card-text variable-word" v-on:click="toggleRole"> {{role}}</span> 
-                  <input v-if="showRoleBox" v-model="role" v-on:keyup.enter="toggleRole" class="card-text small-input"/>
+                  <input maxlength="20" v-if="showRoleBox" v-model="role" v-on:keyup.enter="toggleRole" class="card-text small-input"/>
                   with {{article}} 
                   <span v-if="!showNounBox" id="noun" class="card-text variable-word" @click="toggleNoun">{{noun}}</span>
-                  <input v-if="showNounBox" v-model="noun" v-on:keyup.enter="toggleNoun" class="card-text small-input"/>
+                  <input maxlength="30" v-if="showNounBox" v-model="noun" v-on:keyup.enter="toggleNoun" class="card-text small-input"/>
               </div>
             </div>
             </div>
@@ -43,21 +43,23 @@
               <div v-if="hasSavedCards">
                 <p class="card-header">Your Cards ({{savedCards.length}})</p>
                 <div class="card">
-                  <div @click="deleteCard" class="card-trash">
-                    <span><font-awesome-icon icon="fa-solid fa-trash" class="card-option"/></span>
+                  <div class="card-menu">
+                    <span @click="editSaved" v-if="!editingSaved"><font-awesome-icon icon="fa-regular fa-pen-to-square" class="card-option"/></span>
+                    <span @click="closeSavedEdit" v-if="editingSaved"><font-awesome-icon icon="fa-solid fa-xmark" class="card-option"/></span>
+                    <span @click="deleteCard"><font-awesome-icon icon="fa-solid fa-trash" class="card-option"/></span>
                   </div>
-                    <span @click="roleIndex--" id="left-arrow" ><font-awesome-icon icon="fa-solid fa-angle-left" :class="leftArrow"/></span>
-                    <span @click="roleIndex++" id="right-arrow" ><font-awesome-icon icon="fa-solid fa-angle-right" :class="rightArrow"/></span>
+                    <span @click="previousRole" id="left-arrow" ><font-awesome-icon icon="fa-solid fa-angle-left" :class="leftArrow"/></span>
+                    <span @click="nextRole" id="right-arrow" ><font-awesome-icon icon="fa-solid fa-angle-right" :class="rightArrow"/></span>
                   <div id="saved-role" class="card-text">
                   <div id="saved-role" class="card-text">
                     <div id="generated-role" class="card-text">
                       <span v-if="!showSavedAdjBox" id="savedAdjective" class="card-text variable-word" v-on:click="toggleSavedAdj">{{savedCards[roleIndex].adjective}}</span> 
-                      <input v-if="showSavedAdjBox" v-model="savedCards[roleIndex].adjective" v-on:keyup.enter="toggleSavedAdj" class="card-text small-input"/>
+                      <input maxlength="30" v-if="showSavedAdjBox" v-model="savedCards[roleIndex].adjective" v-on:keyup.enter="toggleSavedAdj" class="card-text small-input"/>
                       <span v-if="!showSavedRoleBox" id="savedRole" class="card-text variable-word" v-on:click="toggleSavedRole"> {{savedCards[roleIndex].role}}</span> 
-                      <input v-if="showSavedRoleBox" v-model="savedCards[roleIndex].role" v-on:keyup.enter="toggleSavedRole" class="card-text small-input"/>
+                      <input maxlength="20" v-if="showSavedRoleBox" v-model="savedCards[roleIndex].role" v-on:keyup.enter="toggleSavedRole" class="card-text small-input"/>
                       with {{savedArticle}} 
                       <span v-if="!showSavedNounBox" id="savedNoun" class="card-text variable-word" @click="toggleSavedNoun">{{savedCards[roleIndex].noun}}</span>
-                      <input v-if="showSavedNounBox" v-model="savedCards[roleIndex].noun" v-on:keyup.enter="toggleSavedNoun" class="card-text small-input"/>
+                      <input maxlength="30" v-if="showSavedNounBox" v-model="savedCards[roleIndex].noun" v-on:keyup.enter="toggleSavedNoun" class="card-text small-input"/>
                     </div>
                     </div>
                   </div>
@@ -92,6 +94,7 @@ export default {
           showSavedAdjBox: false,
           showSavedNounBox: false,
           showSavedRoleBox: false,
+          editingSaved: false,
           savedCards: [],
           roleIndex: 0,
           currentId: 0,
@@ -103,7 +106,7 @@ export default {
      if (this.isVowel(this.noun.charAt(0))) {
             article = "an";   
         }
-        if (this.noun.charAt(this.noun.length - 1) === 's') {
+        if (this.noArticle(this.noun)) {
             article = "";
         } 
         return article;
@@ -121,7 +124,7 @@ export default {
      if (this.isVowel(this.savedNoun.charAt(0))) {
             article = "an";   
         }
-        if (this.savedNoun.charAt(this.savedNoun.length - 1) === 's') {
+        if (this.noArticle(this.savedNoun)) {
             article = "";
         } 
         return article;
@@ -157,11 +160,6 @@ export default {
         this.role = this.selectedRole;
       }
     },
-    editing(newBool) {
-      if (newBool === false) {
-        this.showRoleBox = false;
-      }
-    },
     roleIndex(newIndex) {
       if (newIndex < 0) {
         this.roleIndex = 0;
@@ -172,6 +170,20 @@ export default {
     }
   },
   methods: {
+
+    noArticle(noun) {
+      let plural = this.wordAt(noun, noun.length - 1) === 's';
+      let no = this.wordAt(noun, 0) === 'n' && this.wordAt(noun, 1) === 'o' && this.wordAt(noun, 2) === ' ';
+      let some = this.wordAt(noun, 0) === 's' && this.wordAt(noun, 1) === 'o' && this.wordAt(noun, 2) === 'm' && this.wordAt(noun, 3) === 'e';
+      return plural || no || some;
+    },
+
+    wordAt(word, index) {
+      if (word.length > index)
+        return word.charAt(index);
+      else
+        return false;
+    },
 
     randomRole() {
       let index = this.randomInt(4);
@@ -260,7 +272,7 @@ export default {
     closeCard() {
       this.showAdjectiveBox = false;
       this.showNounBox = false;
-      this.showRoleBox - false;
+      this.showRoleBox = false;
       this.editing = false;
     },
     openCard() {
@@ -274,15 +286,35 @@ export default {
       this.currentId++;
       this.savedCards.push(role);
     },
-      deleteCard() {
+    deleteCard() {
     let index = this.roleIndex;
     if (index > -1) {
       console.log(this.savedCards.splice(index, 1));
       if (this.roleIndex > 0) {
         this.roleIndex--;
-      }
-      }
-      },
+        }
+        }
+      },  
+    closeSavedEdit() {
+      this.showSavedAdjBox = false;
+      this.showSavedNounBox = false;
+      this.showSavedRoleBox = false;
+      this.editingSaved = false;
+    },
+    editSaved() {
+      this.showSavedAdjBox = true;
+      this.showSavedNounBox = true;
+      this.showSavedRoleBox = true;
+      this.editingSaved = true;
+    },
+    nextRole() {
+      this.roleIndex++;
+      this.closeSavedEdit();
+    },
+    previousRole() {
+      this.roleIndex--;
+      this.closeSavedEdit();
+    }
   },
 }
 </script>
@@ -360,14 +392,6 @@ export default {
     right:0;
     top:0;
     margin: 0.5rem;
-  }
-  .card-trash {
-    position:absolute;
-    right:0;
-    top:0;
-  }
-  .fa-trash {
-    height: 1rem;
   }
   #left-arrow {
     position: absolute;
