@@ -46,10 +46,5 @@ export default {
   .main-view {
     height: 100%;
   }
-    @media only screen and (min-width: 901px) {
-      .info {
-          padding: 3rem 5rem;
-          margin-top: 2rem;
-      }
-    }
+
 </style>
