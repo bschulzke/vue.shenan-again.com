@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  
+
 
   name: 'RulesParagraph',
   props: {
@@ -15,15 +15,8 @@ export default {
 
 <style scoped>
   .paragraph-content {
-    height: 100%;
-    display: flex;
-    justify-content: center;
     padding-left: 2rem;
     padding-right: 2rem;
   }
-
-    @media only screen and (min-width: 901px) {
-      
-    }
 
 </style>

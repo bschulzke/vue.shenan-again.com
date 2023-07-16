@@ -11,8 +11,7 @@ others:
 */
 
 * {
-  font-family:Arial, Helvetica, sans-serif;
-  color: white;
+  font-family: Cambria, Helvetica, sans-serif;
 }
 
 /* html {
@@ -25,16 +24,14 @@ html {
   right:0px;
   bottom:0px;
   left:0px;
+  background-color: white;
 }
 
-#email-success {
-  text-align: center;
-  margin: auto 0;
-}
+
 
 body {
-  background-color: #00244D!important;
-  /* height: 100%; */
+  background-color: white;
+  height: 100%;
 }
 
 .navbar {
@@ -397,94 +394,13 @@ a:not(.nav-item) {
   user-select: none;
 }
 
-@media only screen and (min-width: 901px) {
-  .mobile-only {
-    display: none;
-  }
-  #tools-sidebar:hover {
-    cursor: pointer;
-  }
-  .plus {
-    cursor: pointer;
-  }
-  #tools-menu {
-    border-radius: 0 10px 10px 10px;
-  }
-  .card {
-    padding: 5rem;
-    margin: 3rem;
-  }
-  #calculator {
-    padding: 5rem 10rem;
-  }
-  #roles {
-    padding: 3rem 10rem;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  #generated-role {
-    padding: 1.5rem;
-  }
-  .navbar-collapse > .navbar-nav {
-    margin-left: auto;
-  }
-  .nav-item {
-    width: 20rem;
-  }
-  .nav-link:not(.footer-text) {
-    width: 20rem;
-  }
-  .footer > .navbar-nav > .nav-item {
-    width: auto;
-  }
-  .main-view {
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .grid-view {
-    flex-direction: column;
-    padding: 1rem;
-    padding-bottom: 3rem;
-  }
-  .grid-image {
-    width: 100%;
-  }
-  .fullscreen {
-    display: none; 
-  }
-  .info {
-    width: auto;
-    max-width: 50vh;
-    height: auto;
-    padding: 1rem;
-  }
-  .bg-dark {
-    opacity: 100%;
-  }
-  .mid-tagline {
-    margin-left: 0;
-  }
-  
-  .last-tagline {
-    margin-left: 0;
-  }
-  .large-button {
-    padding: 1rem;
-  }
-  .footer-text {
-    padding-left: 0rem!important;
-  }   
-}
-
 .background-image {
   position: fixed;
   height: 100vh;
   width: 100vw;
   z-index: -100;
-  opacity: 0.6;
+  background-color: white;
+  opacity: 0.1;
 }
 
 .light-background-image {

@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import adjectives from './adjectives.js'
+import sections from "./sections"
+
 import nouns from './nouns.js'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -20,6 +22,7 @@ Vue.config.productionTip = false
 let data = {
   adjectives,
   nouns,
+  sections
 }
 
 new Vue({
