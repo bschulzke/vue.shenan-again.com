@@ -1,7 +1,11 @@
 <template>
 <div class="section">
     <p class="title">{{title}}</p>
-    <RulesParagraph v-for="paragraph in paragraphs" :key="paragraph" :content="paragraph"/>       
+    <RulesParagraph v-for="paragraph in paragraphs" :key="paragraph" :content="paragraph"/>
+    <div v-for="subsection in subsections" :key="subsection.title" class="subsection">
+      <p class="title">{{subsection.title}}</p>
+      <RulesParagraph v-for="paragraph in subsection.paragraphs" :key="paragraph" :content="paragraph"/>
+    </div>       
   </div>    
 </template>
 
@@ -16,6 +20,7 @@ export default {
   props: {
     title: String,
     paragraphs: Array,
+    subsections: Array
   }
 }
 </script>
