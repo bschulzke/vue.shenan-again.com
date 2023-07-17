@@ -50,7 +50,7 @@ let sections = [
                 title: "Explain the Scenario",
                 paragraphs: [
                     `As Gamemaster, you’ve got a bit more prep work to do than the Crew. Your job is to set the scene. You explain the scenario, describe the outcomes of rolls, and play the other characters the Crew encounters. To do all this, you’ll need a scenario. A scenario is basically like the roadmap for your story. It doesn't tell you where the Crew will go or what they will do, but it gives you an idea of some places they could go and some things they might do. Most importantly, it outlines what obstacles will get in their way. `,
-                    `If you have the Shenan-Again game box, you can use the prebuilt Shenan-Again scenarios included in the box, which comes with descriptions and maps. If not, you can design a scenario based on the guidelines explained Part 4 - Building Scenarios.`
+                    `If you have the Shenan-Again game box, you can use the prebuilt Shenan-Again scenarios included in the box, which comes with descriptions and maps. If not, you can design a scenario based on the guidelines explained in <i>Crafting Scenarios</i>.`
                 ]
             },
             {
@@ -248,6 +248,20 @@ let sections = [
                     `He rolls 4, 3, 1, 5, and 5. Since he rolled at least one five or six, he succeeds this time. They get the info they need, and proceed with the next step in their plan.`
                 ]
             }
+        ]
+    },
+    {
+        title: `Crafting Scenarios`,
+        paragraphs: [
+            `A Shenan-Again Scenario should include 4-5 non-player characters (NPCs), a brief description of the situation facing the Crew, and a list of 12-15 prepared obstacles. It’s better to over-prepare than to under-prepare—while you might not use every obstacle you prepped, you’ll be glad you had them. Think of the list of obstacles more like a toolkit, rather than the outline of a plot. The plot will come as a result of the choices the players make. As they begin to make choices, give them obstacles as needed to build the tension and keep things interesting.`,
+            `When presenting the Scenario to the players, describe the premise and the Crew’s goal, tell the Crew about the initial obstacles, and introduce NPCs as seems appropriate. Feel free to use the same format described in Part 2 — The Crew for creating character Concepts to create Concepts for the NPCs; it’s a convenient way to quickly come up with distinct characters.`,
+            `The Shenan-Again game box comes with pre-built Scenarios, and each Scenario includes a map that can be used for reference during gameplay. When designing your own Scenarios, you might find it helpful to sketch the map or print one out, so the players can have a visual for what’s going on.`
+        ]
+    },
+    {
+        title: `Some Final Words`,
+        paragraphs: [
+            `There’s something magical when you bring a series of obstacles to the table, and the players come up with solutions to those obstacles that you never would have dreamed up in a million years. It’s hilarious, spontaneous, and incredibly fulfilling. It’s not just an act of creation, it’s an act of discovery. No one knows exactly what’s going to happen. The players don’t know what you’ll throw at them, you don’t know how the players will react, and neither of you know how the dice will fall. It’s a thrilling experience, and we hope you create some unforgettable memories as you play Shenan-Again.`
         ]
     }
 ]

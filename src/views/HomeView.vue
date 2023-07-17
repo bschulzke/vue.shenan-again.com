@@ -186,6 +186,10 @@ export default {
   width: 80%;
 }
 
+.menu-section-title:hover {
+  cursor: pointer;
+}
+
 .close-menu {
   position: absolute;
   right: 1rem;
