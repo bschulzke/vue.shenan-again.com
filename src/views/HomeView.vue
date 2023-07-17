@@ -80,6 +80,7 @@ export default {
     goToPage(index) {
       this.page = index;
       this.menu = false;
+      window.scrollTo(0, 0);
     },
     toggleMenu() {
       this.menu = !this.menu;
@@ -138,7 +139,7 @@ export default {
 
   .menu-icon {
     position: fixed;
-    left: 1rem;
+    left: 0.5rem;
     top: 0.5rem;
   }
   .menu-icon:hover {
