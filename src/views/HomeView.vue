@@ -12,7 +12,7 @@
       </div>
       <font-awesome-icon @click="toggleMenu" v-if="menu" class="close-menu" icon="fa-solid fa-x"/>
     </div>
-    <RulesSection class="section" :paragraphs="paragraphs" :title="sectionTitle" :scroll="!menu">
+    <RulesSection class="section" :paragraphs="paragraphs" :title="sectionTitle" :subsections="subsections">
     </RulesSection>
     <div class="footer">
       <font-awesome-icon v-if="notFirstPage" @click="previous" class="footer-arrow left" icon="fa-solid fa-caret-left"/>
@@ -41,11 +41,11 @@ export default {
   },
   computed: {
     partTitle() {
-      if (this.page < 4) {
+      if (this.page < 2) {
         return "Introduction"
-      } else if (this.page < 8) {
-        return "Setting Up"
-      } else return "Running the Game"
+      } else if (this.page < 5) {
+        return "Setup"
+      } else return "Gameplay"
     },
     sectionTitle() {
       return this.sections[this.page].title
@@ -64,6 +64,9 @@ export default {
     },
     namedSections() {
       return this.sections.slice(1);
+    },
+    subsections() {
+      return this.sections[this.page].subsections;
     }
   },
   methods: {
