@@ -4,7 +4,7 @@
       <p class="part-title">{{partTitle}}</p>
       <hr>
       <div v-if="menu" class="menu">
-      <div @click="gotToPage(0)" class="menu-section">
+      <div @click="goToPage(0)" class="menu-section">
         <p class="menu-section-title">Intro</p>
       </div>
       <div class="menu-section" @click="goToPage(index + 1)" v-for="(section, index) in namedSections" :key="section.title">
@@ -83,7 +83,6 @@ export default {
     goToPage(index) {
       this.page = index;
       this.menu = false;
-      window.scrollTo(0, 0);
     },
     toggleMenu() {
       this.menu = !this.menu;

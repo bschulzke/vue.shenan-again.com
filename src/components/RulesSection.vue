@@ -29,8 +29,8 @@ export default {
 <style scoped>
   .section {
     height: 100vh;
-    overflow: scroll;
-    padding-bottom: 2rem;
+    overflow: auto;
+    padding-bottom: 4rem;
     padding-top: 1rem;
   }
   .title {

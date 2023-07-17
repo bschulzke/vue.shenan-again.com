@@ -1,5 +1,5 @@
 <template>
-  <p v-html="content" class="paragraph-content"></p>
+  <div v-html="content" class="paragraph-content"></div>
 </template>
 
 <script>
@@ -17,6 +17,7 @@ export default {
   .paragraph-content {
     padding-left: 2rem;
     padding-right: 2rem;
+    margin-bottom: 1rem;
   }
 
 </style>

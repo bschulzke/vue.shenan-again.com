@@ -211,17 +211,21 @@ let sections = [
             {
                 title: `Skill Dice`,
                 paragraphs: [
-                    `If players are rolling a Challenge that’s related to their Role (say the Hacker is trying to disable some security cameras) they add two Skill Dice to any number of Luck Dice. In this case, they must roll at least one six on any one of the dice, regardless of which type of die it is. If they wish, they can just roll your two Skill Dice with no Luck Dice, though the odds of rolling a six on just the Skill Dice are fairly slim. If the Challenge doesn’t relate to their Role, but they don’t want to waste any Luck Dice on it, they can always roll just one Skill Dice alone. Whatever dice they’ll be rolling, they need to decide beforehand which dice, and how many, and roll all of them at once.`
+                    `If players are rolling a Challenge that’s related to their Role (say the Hacker is trying to disable some security cameras) they add two Skill Dice to any number of Luck Dice. In this case, they must roll at least one six on any one of the dice, regardless of which type of die it is. If they wish, they can just roll your two Skill Dice with no Luck Dice, though the odds of rolling a six on just the Skill Dice are fairly slim. If the Challenge doesn’t relate to their Role, but they don’t want to waste any Luck Dice on it, they can always roll just one Skill Dice alone. Whatever dice they’ll be rolling, <b>they need to decide beforehand which dice, and how many, and roll all of them at once.</b>`
                 ]
             },
             {
                 title: `Skill Dice Examples:`,
                 paragraphs: [
-                    `The Burglar could add their Skill Dice to pick a lock, but not to knock someone out`,
-                    `The Hacker could add their Skill Dice to access an elevator’s control panel, but not to lie to someone`,
-                    `The Con could add their Skill Dice to pass themselves off as an employee of the people you’re robbing, but not to crack a safe.`,
-                    `The Muscle could add their Skill Dice to shoot someone with a sleeping dart, but not to decrypt a secure email`
-                ] 
+                    `
+                    <ul>
+                        <li>The Burglar could add their Skill Dice to pick a lock, but not to knock someone out</li>
+                        <li>The Hacker could add their Skill Dice to access an elevator’s control panel, but not to lie to someone</li>
+                        <li>The Con could add their Skill Dice to pass themselves off as an employee of the people you’re robbing, but not to crack a safe.</li>
+                        <li>The Muscle could add their Skill Dice to shoot someone with a sleeping dart, but not to decrypt a secure email</li>
+                    </ul>
+                    `
+                ]
             }
         ]
     },
@@ -229,8 +233,21 @@ let sections = [
         title: `Gaining Advantage`,
         paragraphs: [
             `Because they’re in a time-loop, the Crew has a distinct edge in that they relive the same moments multiple times, allowing them to predict what will happen before it occurs and adjust accordingly. Hopefully, they’ll adapt their plan to avoid the mistakes they made in their past attempts. That’s one way that the time-loop gives the Crew an edge. Another way that’s shown is Advantage. Because they’re in a time-loop, the Crew has a distinct edge in that they relive the same moments multiple times, allowing them to predict what will happen before it occurs and adjust accordingly. Hopefully, they’ll adapt their plan to avoid the mistakes they made in their past attempts. That’s one way that the time-loop gives the Crew an edge. Another way that’s shown is Advantage.`,
-            `Under normal conditions, at least one six is needed to succeed at a roll. However, if the player attempted the exact same Challenge roll in a previous loop, they will succeed as long as they roll a five or six, even if they failed before.`,
-            `If they succeeded at least once on the same Challenge in a previous loop,  they succeed on a roll of a four, five, or six. For this higher level of Advantage, it doesn’t matter whether they succeeded in the last loop, or how many times they succeeded. Maybe it’s the second loop, and the player succeeded in the first loop. Maybe it’s the third, and they succeeded on the first but failed on the second, or maybe they succeeded both times. Regardless, as long as they’ve succeeded at least once at doing exactly the same thing, they’ll succeed on a four, five, or six.`
+            `Under normal conditions, at least one <b>six</b> is needed to succeed at a roll. However, if the player attempted the exact same Challenge roll in a previous loop, they will succeed as long as they roll a five <b>or</b> six, even if they failed before.`,
+            `If they <b>succeeded</b> at least once on the same Challenge in a previous loop, they succeed on a roll of a <b>four</b>, five, or six. For this higher level of Advantage, it doesn’t matter whether they succeeded in the last loop, or how many times they succeeded. Maybe it’s the second loop, and the player succeeded in the first loop. Maybe it’s the third, and they succeeded on the first but failed on the second, or maybe they succeeded both times. Regardless, as long as they’ve succeeded <b>at least once</b> at doing <b>exactly</b> the same thing, they’ll succeed on a four, five, or six.`,
+            `Players will only have Advantage when they’ve previously attempted the <b>exact same thing</b>. In many cases, this means it’ll have to be in the same room, in the same situation. It doesn’t necessarily have to be the exact same time, but the circumstances need to be  identical. It’s not just a question of having picked <b>any</b> lock, it’s whether they’ve picked that <b>specific</b> lock before. When it comes to people, it’s not just whether they’ve tackled <b>that</b> guard before, it’s whether they’ve done it in the same space in basically the same situation.`
+        ],
+        subsections: [
+            {
+                title: `Advantage Gameplay Example:`,
+                paragraphs: [
+                    `Aaron, Liz, Maggie, and Sam have infiltrated the dig site. They’re on the second loop. Liz, the Muscle and the leader, instructs Sam to find out who has the key to the bunker where the artifacts are stored. He strikes up a conversation with one of the people working the site.`,
+                    `Sam’s had this conversation before. He didn’t succeed in getting this info last time, but this time at least he knows what not to say. The GM, Matt, calls for a challenge roll. “You’re on fives or sixes,” he reminds Sam.`,
+                    `Sam figures the info he’s fishing for is important, so he takes three Luck Dice to get pretty good odds. Maggie reminds him to add his Skill Dice, since this is clearly related to his Role as the Con.`,
+                    `Sam smiles. “How could I forget?`,
+                    `He rolls 4, 3, 1, 5, and 5. Since he rolled at least one five or six, he succeeds this time. They get the info they need, and proceed with the next step in their plan.`
+                ]
+            }
         ]
     }
 ]
