@@ -42,7 +42,12 @@ export default {
 
     @media only screen and (min-width: 901px) {
         .section {
-            max-width: 900px;
+            padding-left: 30rem;
+            padding-right: 30rem;
+            font-size: 18px;
+        }
+        body {
+          overflow: visible;
         }
     }
 

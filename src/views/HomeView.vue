@@ -1,9 +1,18 @@
 <template>
   <div class="home">
     <font-awesome-icon @click="toggleMenu" icon="fa-solid fa-bars" class="menu-icon"/>
-      <p class="part-title">{{partTitle}}</p>
-      <hr>
-      <div v-if="menu" class="menu">
+    <p class="part-title">{{partTitle}}</p>
+    <hr>
+    <div v-if="menu" class="menu">
+      <div @click="goToPage(0)" class="menu-section">
+        <p class="menu-section-title">Intro</p>
+      </div>
+      <div class="menu-section" @click="goToPage(index + 1)" v-for="(section, index) in namedSections" :key="section.title">
+        <p class="menu-section-title">{{section.title}}</p>
+      </div>
+      <font-awesome-icon @click="toggleMenu" v-if="menu" class="close-menu" icon="fa-solid fa-x"/>
+    </div>
+    <div class="desktop-menu">
       <div @click="goToPage(0)" class="menu-section">
         <p class="menu-section-title">Intro</p>
       </div>
@@ -157,14 +166,6 @@ export default {
     margin-bottom: 0;
   }
 
-  @media only screen and (min-width: 901px) {
-        .home {
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-        }
-    }
-
 .menu {
   z-index: 2;
   background-color: gray;
@@ -199,5 +200,35 @@ export default {
   right: 1rem;
   top: 1rem;
 }
+
+.desktop-menu {
+  display: none;
+  position: fixed;
+  left: 0;
+  background-color: rgb(71, 75, 79);
+  opacity: 95%;
+  color: white;
+  height: 100%;
+  padding-top: 3rem; 
+  width: 13%;
+}
+
+  @media only screen and (min-width: 901px) {
+        .home {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+        .menu-icon {
+          display: none;
+        }
+        .desktop-menu {
+          display: block;
+        }
+        .menu-section {
+          padding-left: 5%;
+          margin-bottom: 1.5rem;
+        }
+    }
 
 </style>
