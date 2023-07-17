@@ -1,8 +1,19 @@
 <template>
   <div class="home">
+    <font-awesome-icon @click="toggleMenu" class="menu-icon" icon="fa-solid fa-bars" />
       <p class="part-title">{{partTitle}}</p>
-      <hr/>
-    <RulesSection class="section" :paragraphs="paragraphs" :title="sectionTitle"/>
+      <hr>
+      <div v-if="menu" class="menu">
+      <div @click="gotToPage(0)" class="menu-section">
+        <p class="menu-section-title">Intro</p>
+      </div>
+      <div class="menu-section" @click="goToPage(index + 1)" v-for="(section, index) in namedSections" :key="section.title">
+        <p class="menu-section-title">{{section.title}}</p>
+      </div>
+      <font-awesome-icon @click="toggleMenu" v-if="menu" class="close-menu" icon="fa-solid fa-x"/>
+    </div>
+    <RulesSection class="section" :paragraphs="paragraphs" :title="sectionTitle" :scroll="!menu">
+    </RulesSection>
     <div class="footer">
       <font-awesome-icon v-if="notFirstPage" @click="previous" class="footer-arrow left" icon="fa-solid fa-caret-left"/>
       <div class="page-number">{{pageNumber}}</div>
@@ -24,16 +35,17 @@ export default {
   data() {
     return {
       sections: this.$root.$data.sections,
-      page: 0
+      page: 0,
+      menu: false
     }
   },
   computed: {
     partTitle() {
       if (this.page < 4) {
         return "Introduction"
-      } else {
-        return "The Mark"
-      }
+      } else if (this.page < 8) {
+        return "Setting Up"
+      } else return "Running the Game"
     },
     sectionTitle() {
       return this.sections[this.page].title
@@ -49,6 +61,9 @@ export default {
     },
     notLastPage() {
       return this.page < this.sections.length - 1;
+    },
+    namedSections() {
+      return this.sections.slice(1);
     }
   },
   methods: {
@@ -61,6 +76,13 @@ export default {
       if (this.page <= this.sections.length) {
         this.page = this.page + 1;
       }
+    },
+    goToPage(index) {
+      this.page = index;
+      this.menu = false;
+    },
+    toggleMenu() {
+      this.menu = !this.menu;
     }
   }
 }
@@ -114,6 +136,15 @@ export default {
     margin-bottom: 0;
   }
 
+  .menu-icon {
+    position: fixed;
+    left: 1rem;
+    top: 0.5rem;
+  }
+  .menu-icon:hover {
+  cursor: pointer;
+}
+
   hr {
     margin-top: 0;
     margin-bottom: 0;
@@ -126,5 +157,36 @@ export default {
           flex-direction: column;
         }
     }
+
+.menu {
+  z-index: 2;
+  background-color: gray;
+  position: absolute;
+  top: 2.25rem;
+  bottom: -4rem;
+  right: 0;
+  left: 0;
+  opacity: 95%;
+  color: white;
+  height: 100%;
+  overflow: scroll;
+  padding-top: 2rem;
+}
+
+.menu-section {
+  padding-left: 20%;
+  width: 100%;
+}
+
+.menu-section-title {
+  border-bottom: 1px solid white;
+  width: 80%;
+}
+
+.close-menu {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
 
 </style>
