@@ -8,11 +8,15 @@ import nouns from './nouns.js'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faFloppyDisk } from '@fortawesome/free-regular-svg-icons'
+import { faX } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import { fab } from '@fortawesome/free-brands-svg-icons';
  
 library.add(fab);
 library.add(faFloppyDisk);
+library.add(faX);
+library.add(faBars);
 
 /* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <font-awesome-icon @click="toggleMenu" class="menu-icon" icon="fa-solid fa-bars" />
+    <font-awesome-icon @click="toggleMenu" icon="fa-solid fa-bars" class="menu-icon"/>
       <p class="part-title">{{partTitle}}</p>
       <hr>
       <div v-if="menu" class="menu">
@@ -30,7 +30,7 @@ import RulesSection from "@/components/RulesSection.vue"
 export default {
   name: 'HomeView',
   components: {
-    RulesSection
+    RulesSection,
   },
   data() {
     return {
