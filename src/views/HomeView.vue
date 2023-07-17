@@ -45,7 +45,11 @@ export default {
         return "Introduction"
       } else if (this.page < 5) {
         return "Setup"
-      } else return "Gameplay"
+      } else if (this.page <13) {
+        return "Scenarios"
+      } else {
+        return "Conclusion"
+      }
     },
     sectionTitle() {
       return this.sections[this.page].title
