@@ -40,10 +40,10 @@ export default {
     font-style: italic;
   }
 
-    @media only screen and (min-width: 901px) {
+    @media only screen and (min-width: 1200px) {
         .section {
-            padding-left: 30rem;
-            padding-right: 30rem;
+            padding-left: 28%;
+            padding-right: 28%;
             font-size: 18px;
         }
         body {
