@@ -11,7 +11,7 @@ import { faFloppyDisk } from '@fortawesome/free-regular-svg-icons'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { faCaretLeft } from '@fortawesome/free-solid-svg-icons'
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
+import { faCaretRight, faDownload } from '@fortawesome/free-solid-svg-icons'
 
 import { fab } from '@fortawesome/free-brands-svg-icons';
  
@@ -20,7 +20,7 @@ library.add(faFloppyDisk);
 library.add(faX);
 library.add(faBars);
 library.add(faCaretLeft);
-library.add(faCaretRight);
+library.add(faCaretRight, faDownload);
 
 /* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)

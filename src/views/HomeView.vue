@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <font-awesome-icon @click="toggleMenu" icon="fa-solid fa-bars" class="menu-icon"/>
+    <div class="options-icons">
+      <font-awesome-icon @click="download" icon="fa-solid fa-download" class="option"/>
+      <font-awesome-icon @click="toggleMenu" icon="fa-solid fa-bars" class="option menu-icon"/>
+    </div>
     <p class="part-title">{{partTitle}}</p>
     <hr>
     <div v-if="menu" class="menu">
@@ -19,7 +22,9 @@
       <div class="menu-section" @click="goToPage(index + 1)" v-for="(section, index) in namedSections" :key="section.title">
         <p class="menu-section-title">{{section.title}}</p>
       </div>
-      <font-awesome-icon @click="toggleMenu" v-if="menu" class="close-menu" icon="fa-solid fa-x"/>
+      <div class="download-wrapper">
+        <font-awesome-icon @click="download" icon="fa-solid fa-download" class="desktop-download"/>
+      </div>
     </div>
     <RulesSection class="section" :paragraphs="paragraphs" :title="sectionTitle" :subsections="subsections">
     </RulesSection>
@@ -54,7 +59,10 @@ export default {
         return "Introduction"
       } else if (this.page < 5) {
         return "Setup"
-      } else if (this.page <13) {
+      } else if (this.page < 12) {
+        return "Gameplay"
+      }
+       else if (this.page < 13) {
         return "Scenarios"
       } else {
         return "Conclusion"
@@ -99,6 +107,13 @@ export default {
     },
     toggleMenu() {
       this.menu = !this.menu;
+    },
+    download() {
+      const a = document.createElement('a');
+      a.href = "./shenan-again.pdf";
+      a.download = "shenan-again.pdf";
+      a.click();
+      document.removeChild(a);
     }
   }
 }
@@ -109,6 +124,11 @@ export default {
 
   .footer {
     color: rgb(35, 35, 35);
+  }
+
+  .footer-arrow {
+    font-size: 24px;
+    color: rgb(99, 105, 110);
   }
 
   .left {
@@ -129,7 +149,7 @@ export default {
 
   .page-number {
     left: 50%;
-    bottom: 0.25rem;
+    bottom: 0.4em;
     z-index: 1;
     position: fixed;
     left: 50%;
@@ -141,7 +161,7 @@ export default {
     bottom: 0;
     right: 0;
     left: 0;
-    height: 2rem;
+    height: 2.5rem;
     background-color: rgb(165, 174, 183);
   }
 
@@ -149,15 +169,25 @@ export default {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
   }
 
-  .menu-icon {
+  .options-icons {
     position: fixed;
-    left: 0.5rem;
-    top: 0.5rem;
+    right: 0.5rem;
+    top: 0.75rem;
+    display: flex;
+    align-items: center;
+    color: rgb(130, 138, 147);
+    font-size: 24px;
   }
-  .menu-icon:hover {
+
+  .option {
+    padding: 0 0.75rem 0 0.75rem;
+  }
+
+  .option:hover {
   cursor: pointer;
 }
 
@@ -171,28 +201,31 @@ export default {
   background-color: gray;
   position: absolute;
   top: 2.25rem;
-  bottom: -4rem;
+  bottom: 0;
   right: 0;
   left: 0;
   opacity: 95%;
   color: white;
-  height: 100%;
-  overflow: scroll;
-  padding-top: 2rem;
+  overflow: auto;
+  padding-top: 1rem;
 }
 
 .menu-section {
   padding-left: 20%;
   width: 100%;
+  height: 3rem;
+  border-radius: 5%;
+}
+
+.menu-section-title:hover {
+  cursor: pointer;
+  border-bottom: 1px solid white;
+  font-weight: bold;
 }
 
 .menu-section-title {
   border-bottom: 1px solid white;
   width: 80%;
-}
-
-.menu-section-title:hover {
-  cursor: pointer;
 }
 
 .close-menu {
@@ -205,29 +238,63 @@ export default {
   display: none;
   position: fixed;
   left: 0;
+  bottom: 2rem;
   background-color: rgb(71, 75, 79);
   opacity: 95%;
   color: white;
   height: 100%;
   padding-top: 3rem; 
-  width: 13%;
+  width: 17rem;
+  overflow: auto;
+  padding-bottom: 1rem;
 }
 
-  @media only screen and (min-width: 901px) {
+.download-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.desktop-download {
+  font-size: 2rem;
+  border: 1px solid white;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 15%;
+}
+
+.desktop-download:hover {
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+  @media only screen and (min-width: 1200px) {
         .home {
           display: flex;
           align-items: center;
           flex-direction: column;
         }
-        .menu-icon {
+        .options-icons {
           display: none;
         }
         .desktop-menu {
           display: block;
         }
         .menu-section {
-          padding-left: 5%;
-          margin-bottom: 1.5rem;
+          padding-left: 0.5rem;
+        }
+        .menu-section-title {
+          border-bottom: transparent;
+        } 
+        .left:hover {
+          cursor: pointer;
+          color: white;
+        }
+
+        .right:hover {
+          cursor: pointer;
+          color: white;
         }
     }
 

@@ -11,7 +11,7 @@ others:
 */
 
 * {
-  font-family: Cambria, Helvetica, sans-serif;
+  font-family: Garamond, 'Times New Roman', Times, serif, serif, Helvetica, sans-serif;
 }
 
 /* html {
@@ -26,8 +26,6 @@ html {
   left:0px;
   background-color: white;
 }
-
-
 
 body {
   background-color: white;

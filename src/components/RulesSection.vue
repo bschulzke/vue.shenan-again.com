@@ -30,8 +30,8 @@ export default {
   .section {
     height: 100vh;
     overflow: auto;
-    padding-bottom: 4rem;
-    padding-top: 1rem;
+    padding-bottom: 12rem;
+    padding-top: 1.5rem;
   }
   .title {
     text-align: center;
