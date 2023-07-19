@@ -131,7 +131,7 @@ let sections = [
     {
         title: "Challenge Rolls",
         paragraphs: [
-            `In order to overcome obstacles, your players will make Challenge rolls. As your players move through the game, a good rule of thumb is to make sure that they are rolling Challenges every three to five minutes. The timer itself should motivate the players to keep moving things along, but if things start to drag, throw in a new obstacle or complication to keep up the pacing. Basically, if you’re not sure whether you should call for a roll on a certain action, you should probably call for a roll. It’s more fun! Even if there doesn’t seem to be much chance of “failure” with a particular action, there’s always a way it could go wrong.`,
+            `In order to overcome obstacles, the Crew will make Challenge Rolls. As they through the game, a good rule of thumb is to make sure that they are rolling for Challenges every three to five minutes. The timer itself should motivate the players to keep moving things along, but if things start to drag, throw in a new obstacle or complication to keep up the pacing. Basically, if you’re not sure whether you should call for a roll on a certain action, you should probably call for a roll. It’s more fun! Even if there doesn’t seem to be much chance of “failure” with a particular action, there’s always a way it could go wrong.`,
             `Now, obviously don’t call for a roll to open unlocked doors or walk down unguarded hallways. But also, if you have too many unlocked doors and unguarded hallways, you’re probably doing something wrong. A game of Shenan-Again should be challenging and constantly subvert the player’s expectations.
             Your goal as GM is for the players to win, but you don’t want to make it easy for them. A perfect game of Shenan-Again will be up in the air until the last minute or two, or even the last thirty seconds. To create that tension, there needs to be a real fear of failure, so if you’re in that third loop and the players are clipping along a little too fast, throw a wrench in their plans by introducing a new complication.`
         ],
@@ -143,56 +143,25 @@ let sections = [
                     `Think about a story you enjoy, whether that’s a TV show, book, or movie. When the the protagonist tries something and fails, does it ever just “not work”? Chances are, failure adds some kind of complication which makes the story more interesting and drives it forward. That’s how a complication for a failed roll in Shenan-Again should feel.`,
                     `The results of failure should always be unpredictable. You can’t plan how you’re going to fail, right? If you succeed, that usually means things go about how you planned, but if you fail, that means things play out in a way you couldn’t have anticipated. This forces you to adapt and keeps you on your toes.`,
                     `Make sure that your complication always requires the players to take a new approach, rather than just rolling for the same thing again. To help you think of different types of complications, we’ve broken them down into three types, but there are infinite different ways things could go wrong. These are just a few ideas:`,
-                    `“Yes but…” — The player who was rolling technically succeeds, but something they hadn’t intended also happens. This still counts as a failure when it comes to calculating advantage, and complications from this are treated just like any other failure.`,
-                    `“Instead” — The player meant to do one thing, but instead, they end up doing something very different.`,
-                    `“Seems like it worked.” — This can be fun, but use it sparingly. In these cases, the player knows they failed the roll, but you just smile and tell them that it seems like it worked. In your head, you’ve thought of something that went wrong, but you don’t tell the players yet. Instead, just leave them guessing about what might have happened, and keep that reveal for a bit later down the road.`,
+                    `
+                    <ul>
+                    <li>“Yes but…” — The player who was rolling technically succeeds, but something they hadn’t intended also happens. This still counts as a failure when it comes to calculating advantage, and complications from this are treated just like any other failure.</li>
+                    <li>“Instead...” — The player meant to do one thing, but instead, they end up doing something very different.</li>
+                    <li>“Seems like it worked...” — This can be fun, but use it sparingly. In these cases, the player knows they failed the roll, but you just smile and tell them that it seems like it worked. In your head, you’ve thought of something that went wrong, but you don’t tell the players yet. Instead, just leave them guessing about what might have happened, and keep that reveal for a bit later down the road.</li>
+                    </ul>
+                    `,
                     `Avoid having the complication from a failed roll be “You get caught/captured.” That’s kinda boring, unless it moves the story forward somehow. Just having them locked up in an empty room isn’t interesting, but if that locked room is also occupied by some poor minion who’s displeased the boss, or it has a broken floorboard that leads down into the basement—now that’s interesting.`,            
+                    `Here are some examples:`,
+                    `
+                    <ul>
+                    <li>The Hacker tries to access the elevators, but fails his roll. Maybe all the elevators stop where they are, and the doors open directly into the elevator shafts. Or perhaps the elevators start going up and down constantly to random floors. Or it works, but unbeknownst to the Hacker, someone noticed him on accessing their system and is now silently tracking his location.</li>
+                    <li>The Con tries to gain someone's trust. Maybe the person become suspicious. Perhaps they aren’t suspicious at all, but still do something <i>totally</i> different from what the Con wants. Or it seems like it works, but the person is just playing along and watching the Con closely to figure out what’s going on.</li>
+                    <li>The thief tries to pick a lock. Maybe they take too long and someone notices before they can finish, or perhaps they unlock the door, but when they step through the door closes and locks behind them. Or they pick the lock, but unknowingly trigger an alarm.</li>
+                    <li>The Muscle tries to knock someone down. Maybe the person knocks them down and take off running. Or maybe they dodge the blow and call in backup. Or they're knocked unconcious, but let out a yell before they go down to alert others nearby.</li>
+                    </ul>
+                    `,
                 ]
-            },
-            {
-                title: 'Failed Roll Examples',
-                paragraphs: [
-                    `Example 1: the Hacker tries to access the elevators, but fails his roll. Maybe all the elevators stop where they are, and the doors open directly into the elevator shafts. Or perhaps the elevators start going up and down constantly to random floors. Or it works, but unbeknownst to the Hacker, someone noticed him on accessing their system and is now silently tracking his location.`,
-                    `Example 2: The Con tries to gain someone's trust. Maybe the person become suspicious. Perhaps they aren’t suspicious at all, but still do something TOTALLY different from what the Con wants. Or it seems like it works, but the person is just playing along and watching the Con closely to figure out what’s going on.`,
-                    `Example 3: The thief tries to pick a lock. Maybe they take too long and someone notices before they can finish, or perhaps they unlock the door, but when they step through the door closes and locks behind them. Or they pick the lock, but unknowingly trigger an alarm.`,
-                    `Example 4: The Muscle tries to knock someone down. Maybe the person knocks them down and take off running. Or maybe they dodge the blow and call in backup. Or they're knocked unconcious, but let out a yell before they go down to alert others nearby.`,
-                ]
-            },
-        ]
-    },
-    {
-        title: `Timestamps`,
-        paragraphs: [
-            `Often, it is advantageous to be aware of precisely when certain events happen. If the Crew wants to take advantage of a moment when a security guard takes a bathroom break, they’ll want to know exactly when that happens. From a practical standpoint, no one’s memory is perfect. As GM, you're only obligated to match times if the Scribe took a note with the timestamp, so the Crew can’t count on an event occurring at a specific time unless they have it written down.`,
-            `This is where the Scribe comes in. In addition to any other information that the players would like to keep track of, it’s very important that the Scribe note down the timestamps of key events. Remember that any timestamps for events caused by the Crew are subject to change, unless everything is done in exactly the same way.`,
-
-        ]
-    },
-    {
-        title: 'Planning and Taking Turns',
-        paragraphs: [
-            `As soon as the timer starts, the players should begin planning. During the first loop players should focus on how they’ll get in, and make a more general plan. In the second and third loops they’ll refine and perfect that plan based on their experience. The leader takes charge during planning—they’ll mediate between players with differing approaches and decide on the best course of action for the Crew. Don’t take too much time on this step—it’s much better spent just going for it. While it’s not entirely realistic, it’s way more fun if the Crew just kinda wings it. Doing <b>something</b> is always more fun than sitting around deliberating. The Crew will want to take a moment at the beginning of each new loop to reassess the plan—but again—don’t let it eat up too much time. Remember, you’re on the clock! `
-        ],
-        subsections: [
-            {
-                title: `Taking turns`,
-                paragraphs: [
-                    `There’s no set turn order in Shenan-Again. Instead, it’s up to the Crew to switch from one crewmember to another depending on what needs to happen next. In-world, your characters are all equipped with earpieces, so you can  communicate with one another in real time. You can use this fact to make suggestions about who should go next and how you  deal with obstacles that arise. Bring those suggestions to your crew’s leader (not the Gamemaster) because the leader calls the shots,they decide who goes when. The leader should make decisions quickly, as deliberating too long will eat up precious time.`,
-                    `If you’re the leader, wherever possible, try to spread tasks out evenly between the players so that everyone can contribute and have a good time. Even if you’re not the leader, you can help out by noticing if one player’s being left out—suggest ways to put their skills to use. It can be helpful at times to have players pair up and work together, especially if you have a larger group. These pairs are fluid from one minute to the next, subject to adaptation based on the needs of the heist.`,
-                    `A lot of situations rely on a sequence of events. First the Conman distracts a guard, then the Burglar sneaks past. But sometimes you’ll want two players to do something “at the same time.” In this case, you still choose one player to roll first, but rather than resolving any of their recovery rolls if they fail, (see Failing a Roll), immediately switch to the other player. Once they’ve both made their first roll, you can keep resolving their failures and/or let other players take turns based on the situation.`,
-                ]  
-            },
-            {
-                title: `Gameplay Example:`,
-                paragraphs: [
-                    `Aaron, Liz, Maggie, and Sam are playing a scenario in which their crew attempts to steal a priceless statue from an archeological dig. Liz, the Muscle, is also the Crewleader.`,
-                    `She says, “Alright guys, how’re we gonna get in?”`,
-                    `Maggie, the Burglar, suggests that she could sneak over to get a closer look.`,
-                    `“Go for it,” Liz says.`,
-                    `Maggie rolls to see if she can sneak up closer, and she succeeds. The GM tells her that there’s a fence around the perimeter, and they check everyone’s ID at the gate. Sam, the Con, suggests that Maggie steal someone’s badge so he can use it to get in. Aaron, the Hacker, suggests that instead they dig their way under the fence.`,
-                    `Liz thinks about it for a second and decides that it would be useful to have a badge once they’re inside, but thinks it might be too risky to steal one. Instead, she tells Sam to “casually” snap a picture of someone’s badge as they’re walking in or out, and plans to have Aaron use photo editing software to create a fake ID badge.`
-                ]
-            },
+            }
         ]
     },
     {
@@ -251,6 +220,41 @@ let sections = [
         ]
     },
     {
+        title: `Timestamps`,
+        paragraphs: [
+            `Often, it is advantageous to be aware of precisely when certain events happen. If the Crew wants to take advantage of a moment when a security guard takes a bathroom break, they’ll want to know exactly when that happens. From a practical standpoint, no one’s memory is perfect. As GM, you're only obligated to match times if the Scribe took a note with the timestamp, so the Crew can’t count on an event occurring at a specific time unless they have it written down.`,
+            `This is where the Scribe comes in. In addition to any other information that the players would like to keep track of, it’s very important that the Scribe note down the timestamps of key events. Remember that any timestamps for events caused by the Crew are subject to change, unless everything is done in exactly the same way.`,
+
+        ]
+    },
+    {
+        title: 'Planning and Taking Turns',
+        paragraphs: [
+            `As soon as the timer starts, the players should begin planning. During the first loop players should focus on how they’ll get in, and make a more general plan. In the second and third loops they’ll refine and perfect that plan based on their experience. The leader takes charge during planning—they’ll mediate between players with differing approaches and decide on the best course of action for the Crew. Don’t take too much time on this step—it’s much better spent just going for it. While it’s not entirely realistic, it’s way more fun if the Crew just kinda wings it. Doing <b>something</b> is always more fun than sitting around deliberating. The Crew will want to take a moment at the beginning of each new loop to reassess the plan—but again—don’t let it eat up too much time. Remember, you’re on the clock! `
+        ],
+        subsections: [
+            {
+                title: `Taking turns`,
+                paragraphs: [
+                    `There’s no set turn order in Shenan-Again. Instead, it’s up to the Crew to switch from one crewmember to another depending on what needs to happen next. In-world, your characters are all equipped with earpieces, so you can  communicate with one another in real time. You can use this fact to make suggestions about who should go next and how you  deal with obstacles that arise. Bring those suggestions to your crew’s leader (not the Gamemaster) because the leader calls the shots,they decide who goes when. The leader should make decisions quickly, as deliberating too long will eat up precious time.`,
+                    `If you’re the leader, wherever possible, try to spread tasks out evenly between the players so that everyone can contribute and have a good time. Even if you’re not the leader, you can help out by noticing if one player’s being left out—suggest ways to put their skills to use. It can be helpful at times to have players pair up and work together, especially if you have a larger group. These pairs are fluid from one minute to the next, subject to adaptation based on the needs of the heist.`,
+                    `A lot of situations rely on a sequence of events. First the Conman distracts a guard, then the Burglar sneaks past. But sometimes you’ll want two players to do something “at the same time.” In this case, you still choose one player to roll first, but rather than resolving any of their recovery rolls if they fail, (see Failing a Roll), immediately switch to the other player. Once they’ve both made their first roll, you can keep resolving their failures and/or let other players take turns based on the situation.`,
+                ]  
+            },
+            {
+                title: `Gameplay Example:`,
+                paragraphs: [
+                    `Aaron, Liz, Maggie, and Sam are playing a scenario in which their crew attempts to steal a priceless statue from an archeological dig. Liz, the Muscle, is also the Crewleader.`,
+                    `She says, “Alright guys, how’re we gonna get in?”`,
+                    `Maggie, the Burglar, suggests that she could sneak over to get a closer look.`,
+                    `“Go for it,” Liz says.`,
+                    `Maggie rolls to see if she can sneak up closer, and she succeeds. The GM tells her that there’s a fence around the perimeter, and they check everyone’s ID at the gate. Sam, the Con, suggests that Maggie steal someone’s badge so he can use it to get in. Aaron, the Hacker, suggests that instead they dig their way under the fence.`,
+                    `Liz thinks about it for a second and decides that it would be useful to have a badge once they’re inside, but thinks it might be too risky to steal one. Instead, she tells Sam to “casually” snap a picture of someone’s badge as they’re walking in or out, and plans to have Aaron use photo editing software to create a fake ID badge.`
+                ]
+            },
+        ]
+    },
+    {
         title: `Crafting Scenarios`,
         paragraphs: [
             `A Shenan-Again Scenario should include 4-5 non-player characters (NPCs), a brief description of the situation facing the Crew, and a list of 12-15 prepared obstacles. It’s better to over-prepare than to under-prepare—while you might not use every obstacle you prepped, you’ll be glad you had them. Think of the list of obstacles more like a toolkit, rather than the outline of a plot. The plot will come as a result of the choices the players make. As they begin to make choices, give them obstacles as needed to build the tension and keep things interesting.`,
@@ -261,7 +265,7 @@ let sections = [
     {
         title: `Some Final Words`,
         paragraphs: [
-            `There’s something magical when you bring a series of obstacles to the table, and the players work through the Loops to find you never would have dreamed up in a million years. It’s hilarious, spontaneous, and incredibly exciting. It’s not just an act of creation, it’s an act of discovery. No one knows exactly what’s going to happen. The players don’t know what you’ll throw at them, you don’t know how the players will react, and <i>no one</i> knows how the dice will fall. It’s a thrilling experience, and we hope you create some unforgettable memories as you play Shenan-Again.`
+            `There’s something magical when you bring a series of obstacles to the table, and the players come up with solutions you never could've imagined. It’s hilarious, spontaneous, and incredibly exciting. It’s not just an act of creation, it’s an act of discovery. No one knows exactly what’s going to happen. The players don’t know what you’ll throw at them, you don’t know how the players will react, and <i>no one</i> knows how the dice will fall. It’s a thrilling experience, and we hope you create some unforgettable memories with Shenan-Again.`
         ]
     }
 ]

@@ -38,6 +38,7 @@ export default {
     text-decoration: underline;
     margin-bottom: 0;
     font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
     @media only screen and (min-width: 1200px) {
