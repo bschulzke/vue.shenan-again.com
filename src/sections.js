@@ -261,7 +261,7 @@ let sections = [
     {
         title: `Some Final Words`,
         paragraphs: [
-            `There’s something magical when you bring a series of obstacles to the table, and the players come up with solutions to those obstacles that you never would have dreamed up in a million years. It’s hilarious, spontaneous, and incredibly fulfilling. It’s not just an act of creation, it’s an act of discovery. No one knows exactly what’s going to happen. The players don’t know what you’ll throw at them, you don’t know how the players will react, and neither of you know how the dice will fall. It’s a thrilling experience, and we hope you create some unforgettable memories as you play Shenan-Again.`
+            `There’s something magical when you bring a series of obstacles to the table, and the players work through the Loops to find you never would have dreamed up in a million years. It’s hilarious, spontaneous, and incredibly exciting. It’s not just an act of creation, it’s an act of discovery. No one knows exactly what’s going to happen. The players don’t know what you’ll throw at them, you don’t know how the players will react, and <i>no one</i> knows how the dice will fall. It’s a thrilling experience, and we hope you create some unforgettable memories as you play Shenan-Again.`
         ]
     }
 ]
