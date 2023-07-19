@@ -4,7 +4,9 @@
       <font-awesome-icon @click="download" icon="fa-solid fa-download" class="option"/>
       <font-awesome-icon @click="toggleMenu" icon="fa-solid fa-bars" class="option menu-icon"/>
     </div>
-    <p class="part-title">{{partTitle}}</p>
+    <div class="part-title-wrapper">
+      <p class="part-title">{{partTitle}}</p>
+    </div>
     <hr>
     <div v-if="menu" class="menu">
       <div @click="goToPage(0)" class="menu-section">
@@ -28,7 +30,7 @@
     </div>
     <div class="title-page" v-if="page === -1">
       <div class="title">Shenan-Again</div>
-      <div>The Time-loop Heist Game</div>
+      <div>The Time-Loop Heist Game</div>
       <div class="credits">
         <div class="credit">Created by Ben Schulzke</div>
         <div class="credit">Produced by Jacob Talbot</div>
@@ -69,7 +71,7 @@ export default {
   computed: {
     partTitle() {
       if (this.page < 0) {
-        return "Tiny Tabletops";
+        return null;
       }
       if (this.page < 2) {
         return "Introduction"
@@ -214,6 +216,10 @@ export default {
     font-weight: bold;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
+  }
+
+  .part-title-wrapper {
+    height: 3rem;
   }
 
   .options-icons {
