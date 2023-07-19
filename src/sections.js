@@ -62,7 +62,7 @@ let sections = [
         ]
     },
     {
-        title: 'Create Character Concepts',
+        title: 'Creating Character Concepts',
         paragraphs: [
             `First, choose one of the four Roles from below and write it down in the middle of your index card (if you're using the game-box, then all the players write their Concepts as indicated on the Crew card), with room on both sides to add additional words before and after your Role. Your Role is the reason the Crew decided to bring you along—it represents what you’re good at, what makes you useful.`,
             `Con: deception, forging documents, disguises, getting information out of people, general persuasion and charisma`,
@@ -167,20 +167,20 @@ let sections = [
     {
         title: `Two Kinds of Dice`,
         paragraphs: [
-            `Not everything attempted should automatically succeed. Many times while attempting to do something very difficult, there will be limited time or limited information. To reflect these difficult tasks, where there’s a real chance of failure and where failure would throw a complication in the Crew’s plan, the GM will call for the player to perform a Challenge roll, which determines if they succeed or fail. There are two types of dice in Shenan-Again which represent different kinds of resources available to the Crew: Luck Dice, and Skill Dice.`
+            `When making a Challenge Roll, there are two types of dice available: Luck Dice (these are the blue dice in the gamebox) and Skill Dice (these are the white dice).`
         ],
         subsections: [
             {
                 title: `Luck Dice`,
                 paragraphs: [
-                    `During set up,  twenty dice should be set in the middle of the table. This is a shared pool of dice called Luck Dice. If you don’t have twenty dice, you keep track of your “pool” of dice on a piece of paper, “crossing off” dice when they’re used instead of physically removing them. Whenever players are called upon to roll for a Challenge, they can roll as many Luck Dice as they wish to overcome that Challenge. As long as they roll a six on at least one die, they succeed. This doesn’t mean adding up the results. Look to see if <b>at least one die comes up as a six</b>. If they don't roll a single six, they fail. Whatever Luck Dice used, once rolled, are removed from play for the remainder of the current loop. At the beginning of each loop, the pool of Luck Dice resets back to twenty.`,
+                    `The Crew starts each Loop with a "pool" of 20 Luck Dice. The pool is depleted as the dice are rolled and only refills between Loops. If you don’t have twenty dice, you can keep track of your “pool” of dice on a piece of paper, “crossing off” dice when they’re used instead of physically removing them. The Shenan-Again gamebox comes with eight Luck Dice and dice trackers. Whenever players are called upon to roll for a Challenge, they can roll as many Luck Dice as they wish. As long as they roll a six on at least one die, they succeed. This doesn’t mean adding up the results. Look to see if <b>at least one die comes up as a six</b>. If they don't roll a single six, they fail. Whatever Luck Dice used, once rolled, are removed from play for the remainder of the current loop. At the beginning of each loop, the pool of Luck Dice resets back to twenty.`,
                     
                 ]
             },
             {
                 title: `Skill Dice`,
                 paragraphs: [
-                    `If players are rolling a Challenge that’s related to their Role (say the Hacker is trying to disable some security cameras) they add two Skill Dice to any number of Luck Dice. In this case, they must roll at least one six on any one of the dice, regardless of which type of die it is. If they wish, they can just roll your two Skill Dice with no Luck Dice, though the odds of rolling a six on just the Skill Dice are fairly slim. If the Challenge doesn’t relate to their Role, but they don’t want to waste any Luck Dice on it, they can always roll just one Skill Dice alone. Whatever dice they’ll be rolling, <b>they need to decide beforehand which dice, and how many, and roll all of them at once.</b>`
+                    `If players are rolling a Challenge that’s related to their Role (say the Hacker is trying to disable some security cameras) they can roll two Skill Dice in addition to their Luck Dice. In this case, they must roll at least one six on any one of the dice, regardless of which type of die it is. If they wish, they can just roll their two Skill Dice with no Luck Dice, though the odds of rolling a six on just the Skill Dice are fairly slim. If the Challenge doesn’t relate to their Role and they can't or don't want to spend Luck Dice on it, a player may roll <b>one</b> of the Skill Dice by itself, as long as they roll no Luck Dice. Whatever the case, they need to decide <b>beforehand</b> which dice, and how many, and roll all of them at once.`
                 ]
             },
             {
