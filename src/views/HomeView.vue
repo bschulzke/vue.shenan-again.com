@@ -26,7 +26,20 @@
         <font-awesome-icon @click="download" icon="fa-solid fa-download" class="desktop-download"/>
       </div>
     </div>
-    <RulesSection class="section" :paragraphs="paragraphs" :title="sectionTitle" :subsections="subsections">
+    <div class="title-page">
+      <div class="title">Shenan-Again</div>
+      <div>The Time-loop Heist Game</div>
+      <div class="credits">
+        <div class="credit">Created by Ben Schulzke</div>
+        <div class="credit">Produced by Jacob Talbot</div>
+        <div class="credit">Edited by Sarah Schulzke</div>
+        <div class="copyright">
+          <div>© 2023 Tiny Tabletops</div>
+          <div>All rights reserved</div>
+        </div>
+      </div>
+    </div>
+    <RulesSection v-if="page >= 0" class="section" :paragraphs="paragraphs" :title="sectionTitle" :subsections="subsections">
     </RulesSection>
     <div class="footer">
       <font-awesome-icon v-if="notFirstPage" @click="previous" class="footer-arrow left" icon="fa-solid fa-caret-left"/>
@@ -49,7 +62,7 @@ export default {
   data() {
     return {
       sections: this.$root.$data.sections,
-      page: 0,
+      page: -1,
       menu: false
     }
   },
@@ -78,7 +91,7 @@ export default {
       return this.page + 1;
     },
     notFirstPage() {
-      return this.page > 0;
+      return this.page > -1;
     },
     notLastPage() {
       return this.page < this.sections.length - 1;
@@ -92,7 +105,7 @@ export default {
   },
   methods: {
     previous() {
-      if (this.page > 0) {
+      if (this.page > -1) {
         this.page = this.page - 1;
       }
     },
@@ -121,6 +134,30 @@ export default {
 </script>
 
 <style scoped>
+
+  .title-page {
+    text-align: center;
+    font-size: 18px;
+    color: grey;
+    padding: 3rem;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .credits {
+    font-style: italic;
+    padding-top: 2rem;
+  }
+
+  .credit {
+    margin-bottom: 0.5rem;
+  }
+
+  .copyright {
+    margin-top: 2rem;
+  }
 
   .footer {
     color: rgb(35, 35, 35);
