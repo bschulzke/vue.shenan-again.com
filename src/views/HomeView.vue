@@ -26,7 +26,7 @@
         <font-awesome-icon @click="download" icon="fa-solid fa-download" class="desktop-download"/>
       </div>
     </div>
-    <div class="title-page">
+    <div class="title-page" v-if="page === -1">
       <div class="title">Shenan-Again</div>
       <div>The Time-loop Heist Game</div>
       <div class="credits">
@@ -68,6 +68,9 @@ export default {
   },
   computed: {
     partTitle() {
+      if (this.page < 0) {
+        return "Tiny Tabletops";
+      }
       if (this.page < 2) {
         return "Introduction"
       } else if (this.page < 5) {
@@ -88,6 +91,9 @@ export default {
       return this.sections[this.page].paragraphs
     },
     pageNumber() {
+      if (this.page == -1) {
+        return "Title Page";
+      }
       return this.page + 1;
     },
     notFirstPage() {
@@ -237,7 +243,7 @@ export default {
   z-index: 2;
   background-color: gray;
   position: absolute;
-  top: 2.25rem;
+  top: 3.25rem;
   bottom: 0;
   right: 0;
   left: 0;
