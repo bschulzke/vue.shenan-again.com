@@ -345,6 +345,9 @@ export default {
           cursor: pointer;
           color: white;
         }
+        .home {
+          margin-left: 10%;
+        }
     }
 
 </style>

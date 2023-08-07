@@ -39,13 +39,4 @@ import $ from 'jquery'
   #app {
     height: 100%;
   }
-  .grey-link path {
-    fill: grey;
-  }
-  .footer-text {
-    padding: 0 1rem;
-  }
-  .greyBackground {
-    background-color: rgba(229,229,229, 0.65);
-  }
 </style>
